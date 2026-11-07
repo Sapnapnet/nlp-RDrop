@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-11-04T03:39:31.591750+00:00",
+  "model": {
+    "repository": "google-bert/bert-base-cased",
+    "revision": "cd5ef92a9fb2f889e972770a36d4ed042daf221e",
+    "local_path": "models/bert-base-cased",
+    "weight_file": "pytorch_model.bin",
+    "num_labels": 2,
+    "classifier_initialization": "Random, set the experiment seed before from_pretrained."
+  },
+  "dataset": {
+    "repository": "nyu-mll/glue",
+    "revision": "bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c",
+    "subset": "mrpc",
+    "train_path": "data/mrpc/train.jsonl",
+    "validation_path": "data/mrpc/validation.jsonl",
+    "train_rows": 3668,
+    "validation_rows": 408,
+    "validation_report_name": "dev",
+    "label_names": {
+      "0": "not_equivalent",
+      "1": "equivalent"
+    },
+    "preserve_original_order_and_text": true,
+    "test_used": false
+  },
+  "files": [
+    {
+      "path": "models/bert-base-cased/config.json",
+      "size": 570,
+      "sha256": "8b73abed2d67075fd3ec0f840aa53d9cccdc9169c04a7da135c07e721910ed74",
+      "repository": "google-bert/bert-base-cased",
+      "revision": "cd5ef92a9fb2f889e972770a36d4ed042daf221e",
+      "repository_path": "config.json",
+      "official_url": "https://huggingface.co/google-bert/bert-base-cased/resolve/cd5ef92a9fb2f889e972770a36d4ed042daf221e/config.json",
+      "download_url": "https://hf-mirror.com/google-bert/bert-base-cased/resolve/cd5ef92a9fb2f889e972770a36d4ed042daf221e/config.json",
+      "upstream_hash_type": "git_blob_sha1",
+      "upstream_hash": "107460496b431545e4f921afb3fd5486fd2ae79d"
+    },
+    {
+      "path": "models/bert-base-cased/tokenizer_config.json",
+      "size": 49,
+      "sha256": "0f6d13e6f4da6f9e24f22ada6bc3be571123d858d7c0c05a8a7cd55a9c23c2e8",
+      "repository": "google-bert/bert-base-cased",
+      "revision": "cd5ef92a9fb2f889e972770a36d4ed042daf221e",
+      "repository_path": "tokenizer_config.json",
+      "official_url": "https://huggingface.co/google-bert/bert-base-cased/resolve/cd5ef92a9fb2f889e972770a36d4ed042daf221e/tokenizer_config.json",
+      "download_url": "https://hf-mirror.com/google-bert/bert-base-cased/resolve/cd5ef92a9fb2f889e972770a36d4ed042daf221e/tokenizer_config.json",
+      "upstream_hash_type": "git_blob_sha1",
+      "upstream_hash": "2ba5de7675473164e07f3b3531748c9a6f113a2c"
+    },
+    {
+      "path": "models/bert-base-cased/tokenizer.json",
+      "size": 435797,
+      "sha256": "5b3360be30cdf39081153cf9d30bfb0503c011462fc9f77f097127c83ef0f4d9",
+      "repository": "google-bert/bert-base-cased",
+      "revision": "cd5ef92a9fb2f889e972770a36d4ed042daf221e",
+      "repository_path": "tokenizer.json",
+      "official_url": "https://huggingface.co/google-bert/bert-base-cased/resolve/cd5ef92a9fb2f889e972770a36d4ed042daf221e/tokenizer.json",
+      "download_url": "https://hf-mirror.com/google-bert/bert-base-cased/resolve/cd5ef92a9fb2f889e972770a36d4ed042daf221e/tokenizer.json",
+      "upstream_hash_type": "git_blob_sha1",
+      "upstream_hash": "1ab2a0d23e5a032b6dcd6a3d0976c2af4d2c27f8"
+    },
+    {
+      "path": "models/bert-base-cased/vocab.txt",
+      "size": 213450,
+      "sha256": "eeaa9875b23b04b4c54ef759d03db9d1ba1554838f8fb26c5d96fa551df93d02",
+      "repository": "google-bert/bert-base-cased",
+      "revision": "cd5ef92a9fb2f889e972770a36d4ed042daf221e",
+      "repository_path": "vocab.txt",
+      "official_url": "https://huggingface.co/google-bert/bert-base-cased/resolve/cd5ef92a9fb2f889e972770a36d4ed042daf221e/vocab.txt",
+      "download_url": "https://hf-mirror.com/google-bert/bert-base-cased/resolve/cd5ef92a9fb2f889e972770a36d4ed042daf221e/vocab.txt",
+      "upstream_hash_type": "git_blob_sha1",
+      "upstream_hash": "2ea941cc79a6f3d7985ca6991ef4f67dad62af04"
+    },
+    {
+      "path": "models/bert-base-cased/README.md",
+      "size": 8982,
+      "sha256": "cc8e037bc719c4776a0f78b146b315df062f8172343bbde9af25792683059080",
+      "repository": "google-bert/bert-base-cased",
+      "revision": "cd5ef92a9fb2f889e972770a36d4ed042daf221e",
+      "repository_path": "README.md",
+      "official_url": "https://huggingface.co/google-bert/bert-base-cased/resolve/cd5ef92a9fb2f889e972770a36d4ed042daf221e/README.md",
+      "download_url": "https://hf-mirror.com/google-bert/bert-base-cased/resolve/cd5ef92a9fb2f889e972770a36d4ed042daf221e/README.md",
+      "upstream_hash_type": "git_blob_sha1",
+      "upstream_hash": "ba25d58536e9f3597748ae26bb79a40f734d9bda"
+    },
+    {
+      "path": "models/bert-base-cased/pytorch_model.bin",
+      "size": 435779157,
+      "sha256": "d6992b8cd27d7a132eafce6a8210272329a371b1c762d453588795dd3835593e",
+      "repository": "google-bert/bert-base-cased",
+      "revision": "cd5ef92a9fb2f889e972770a36d4ed042daf221e",
+      "repository_path": "pytorch_model.bin",
+      "official_url": "https://huggingface.co/google-bert/bert-base-cased/resolve/cd5ef92a9fb2f889e972770a36d4ed042daf221e/pytorch_model.bin",
+      "download_url": "https://hf-mirror.com/google-bert/bert-base-cased/resolve/cd5ef92a9fb2f889e972770a36d4ed042daf221e/pytorch_model.bin",
+      "upstream_hash_type": "sha256",
+      "upstream_hash": "d6992b8cd27d7a132eafce6a8210272329a371b1c762d453588795dd3835593e"
+    },
+    {
+      "path": "data/mrpc/raw/train.parquet",
+      "size": 649281,
+      "sha256": "61fd41301e0e244b0420c4350a170c8e7cf64740335fc875a4af2d79af0df0af",
+      "repository": "nyu-mll/glue",
+      "revision": "bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c",
+      "repository_path": "mrpc/train-00000-of-00001.parquet",
+      "official_url": "https://huggingface.co/datasets/nyu-mll/glue/resolve/bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c/mrpc/train-00000-of-00001.parquet",
+      "download_url": "https://hf-mirror.com/datasets/nyu-mll/glue/resolve/bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c/mrpc/train-00000-of-00001.parquet",
+      "upstream_hash_type": "sha256",
+      "upstream_hash": "61fd41301e0e244b0420c4350a170c8e7cf64740335fc875a4af2d79af0df0af"
+    },
+    {
+      "path": "data/mrpc/raw/validation.parquet",
+      "size": 75678,
+      "sha256": "33c007dbf5bfa8463d87a13e6226df8c0fcf2596c2cd39d0f3bb79754e00f50f",
+      "repository": "nyu-mll/glue",
+      "revision": "bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c",
+      "repository_path": "mrpc/validation-00000-of-00001.parquet",
+      "official_url": "https://huggingface.co/datasets/nyu-mll/glue/resolve/bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c/mrpc/validation-00000-of-00001.parquet",
+      "download_url": "https://hf-mirror.com/datasets/nyu-mll/glue/resolve/bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c/mrpc/validation-00000-of-00001.parquet",
+      "upstream_hash_type": "sha256",
+      "upstream_hash": "33c007dbf5bfa8463d87a13e6226df8c0fcf2596c2cd39d0f3bb79754e00f50f"
+    },
+    {
+      "path": "data/mrpc/source_README.md",
+      "size": 35296,
+      "sha256": "073f689c80fc6b3366d583eb570a05be2140b01ff2fdd706c416e14d0d2d5d5a",
+      "repository": "nyu-mll/glue",
+      "revision": "bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c",
+      "repository_path": "README.md",
+      "official_url": "https://huggingface.co/datasets/nyu-mll/glue/resolve/bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c/README.md",
+      "download_url": "https://hf-mirror.com/datasets/nyu-mll/glue/resolve/bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c/README.md",
+      "upstream_hash_type": "git_blob_sha1",
+      "upstream_hash": "274c0b2c4c5524fe09285a8b7d945fe98a1dfe7a"
+    },
+    {
+      "path": "data/mrpc/train.jsonl",
+      "size": 1066397,
+      "sha256": "5f967d87bc5b5f33ff4c092f7d78066de806c7f0857bd3e0129f0f255591a8ab",
+      "origin": "Local derivation or recorded official Hub metadata; see build procedure."
+    },
+    {
+      "path": "data/mrpc/validation.jsonl",
+      "size": 119498,
+      "sha256": "497e7e4e3227190705b5d22ea8cda7827d92f7e1449d947c41cc1ba671e9d9d4",
+      "origin": "Local derivation or recorded official Hub metadata; see build procedure."
+    },
+    {
+      "path": "data/mrpc/audit.json",
+      "size": 1056,
+      "sha256": "73e176dd9a7d4a723cc1d63ab801596db1b779fc84d79a41527e66b21ce6b421",
+      "origin": "Local derivation or recorded official Hub metadata; see build procedure."
+    },
+    {
+      "path": "data/mrpc/sample_ids.json",
+      "size": 619414,
+      "sha256": "11147fdde37330f70b5d8c46b7f6d16ac03ff12af6fb1572d3da2991819e3fa8",
+      "origin": "Local derivation or recorded official Hub metadata; see build procedure."
+    },
+    {
+      "path": "configs/input_protocol.json",
+      "size": 1556,
+      "sha256": "2992abf579e6cc6c5f3416a4e0a79f84340e132be5c8625c51d0f6551898308e",
+      "origin": "Local derivation or recorded official Hub metadata; see build procedure."
+    },
+    {
+      "path": "provenance/step3_hub/model.json",
+      "size": 6994,
+      "sha256": "458b57492057958a83bbcbef29fd59964312c994fc45945aef0aa1bf41c5069d",
+      "origin": "Local derivation or recorded official Hub metadata; see build procedure."
+    },
+    {
+      "path": "provenance/step3_hub/dataset.json",
+      "size": 35647,
+      "sha256": "b20ca447f8fa7332560f8a2e40b66dbdca714874fc15851f530556e57d70e9a4",
+      "origin": "Local derivation or recorded official Hub metadata; see build procedure."
+    },
+    {
+      "path": "provenance/step3_hub/downloads.json",
+      "size": 6708,
+      "sha256": "d4146674e755a3069836ed12524461044d4dc6d8913e2cefd6c4dfba7da85626",
+      "origin": "Local derivation or recorded official Hub metadata; see build procedure."
+    }
+  ],
+  "derivation": "Parquet.to_pylist, unchanged four columns and order, JSON sort_keys=True/ensure_ascii=False/separators=(',', ':') and LF per row.",
+  "metadata_sources": [
+    "https://huggingface.co/api/models/google-bert/bert-base-cased?blobs=true",
+    "https://huggingface.co/api/datasets/nyu-mll/glue?blobs=true"
+  ],
+  "verification": "All nine downloads match official Hub LFS SHA256 or Git blob SHA1; all packaged files also have local SHA256."
+}

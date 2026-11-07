@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "purpose": "smoke_only_not_formal_results",
+  "condition": "baseline",
+  "seed": 13,
+  "training_protocol": "configs/training_protocol.json",
+  "train_subset": {"selection": "first_rows_in_fixed_original_order", "count": 256},
+  "dev_subset": {"selection": "first_rows_in_fixed_original_order", "count": 64},
+  "max_updates": 20,
+  "warmup_updates": 2,
+  "expected_training_microbatches": 40,
+  "expected_training_example_visits": 320,
+  "checkpoint_selection": "final update 20; evaluation-only reload check",
+  "resume_training_tested": false
+}

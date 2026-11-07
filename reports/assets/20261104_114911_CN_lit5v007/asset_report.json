@@ -1,0 +1,63 @@
+{
+  "step": 3,
+  "overall_status": "PASS",
+  "output_directory": "/root/autodl-tmp/rdrop-mrpc-project/reports/assets/20261104_114911_CN_lit5v007",
+  "started_at_utc": "2026-11-04T03:49:11.316357+00:00",
+  "scope": "Offline data/model preparation check; no formal experiments.",
+  "script_sha256": {
+    "asset_utils.py": "a1d615cbaa22601b5f5a83221013352898157d4d6ae0ec4d5ba0d870f1962a5d",
+    "check_step3.py": "df9472781ac2f2f74f2af378e0f8726aff39b1074a0cc2fb2f1b2993ef09b2bb",
+    "check_assets_runtime.py": "2b17e78d9a6c6b3e3f7472a7d7405a8fd69ad7760d0a86fabfc7ca5dc027f155"
+  },
+  "asset_verification": {
+    "verified_file_count": 17,
+    "manifest_sha256": "f488231f82092add462278044fbe2dc96ee2ec2fb2e8face4f77464752c6bbdd",
+    "model_revision": "cd5ef92a9fb2f889e972770a36d4ed042daf221e",
+    "dataset_revision": "bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c",
+    "data_audit": {
+      "splits": {
+        "train": {
+          "num_rows": 3668,
+          "label_counts": {
+            "0": 1194,
+            "1": 2474
+          },
+          "unique_native_ids": 3668,
+          "native_id_min": 0,
+          "native_id_max": 4075,
+          "ordered_rows_sha256": "5f967d87bc5b5f33ff4c092f7d78066de806c7f0857bd3e0129f0f255591a8ab",
+          "duplicate_ordered_pairs": 0,
+          "duplicate_unordered_pairs": 0
+        },
+        "validation": {
+          "num_rows": 408,
+          "label_counts": {
+            "0": 129,
+            "1": 279
+          },
+          "unique_native_ids": 408,
+          "native_id_min": 9,
+          "native_id_max": 4053,
+          "ordered_rows_sha256": "497e7e4e3227190705b5d22ea8cda7827d92f7e1449d947c41cc1ba671e9d9d4",
+          "duplicate_ordered_pairs": 0,
+          "duplicate_unordered_pairs": 0
+        }
+      },
+      "cross_split": {
+        "native_id_overlap": 0,
+        "exact_ordered_pair_overlap": 0,
+        "exact_unordered_pair_overlap": 0,
+        "exact_sentence_overlap": 43,
+        "interpretation": "Exact strings only; sentence overlap alone does not establish leakage. Original split is preserved."
+      }
+    }
+  },
+  "command": [
+    "/root/autodl-tmp/rdrop-mrpc-project/.venv/bin/python",
+    "/root/autodl-tmp/rdrop-mrpc-project/scripts/check_assets_runtime.py",
+    "--output-dir",
+    "/root/autodl-tmp/rdrop-mrpc-project/reports/assets/20261104_114911_CN_lit5v007"
+  ],
+  "runtime_check_count": 7,
+  "finished_at_utc": "2026-11-04T03:49:21.378299+00:00"
+}

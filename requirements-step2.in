@@ -1,0 +1,49 @@
+# Direct dependencies for the author's Transformers 4.6.0.dev0 fork.
+# PyTorch 2.1.2+cu118 is reused from the validated server base environment.
+# transformers is installed ONLY from vendor/R-Drop/huggingface_transformer_src.
+numpy==1.26.4
+tokenizers==0.13.3
+sacremoses==0.1.1
+datasets==2.19.2
+huggingface-hub==0.23.5
+pyarrow==16.1.0
+pandas==2.2.2
+scikit-learn==1.4.2
+scipy==1.13.1
+fsspec==2024.3.1
+psutil==5.9.8
+packaging==24.1
+filelock==3.15.4
+requests==2.32.3
+tqdm==4.66.4
+regex==2024.5.15
+PyYAML==6.0.1
+aiohttp==3.9.5
+# Explicit for Python 3.10 even if preparing the bundle on Python 3.12.
+async-timeout==4.0.3
+dill==0.3.8
+multiprocess==0.70.16
+typing-extensions==4.12.2
+joblib==1.4.2
+threadpoolctl==3.5.0
+pip==24.0
+setuptools==69.5.1
+wheel==0.43.0
+# Transitive pins keep this legacy source independent of later major releases.
+aiosignal==1.3.1
+attrs==23.2.0
+certifi==2026.10.23
+charset-normalizer==3.3.2
+click==8.1.7
+colorama==0.4.6
+frozenlist==1.4.1
+idna==3.7
+multidict==6.0.5
+pyarrow-hotfix==0.6
+python-dateutil==2.9.0.post0
+pytz==2024.1
+six==1.16.0
+tzdata==2024.1
+urllib3==2.2.2
+xxhash==3.4.1
+yarl==1.9.4

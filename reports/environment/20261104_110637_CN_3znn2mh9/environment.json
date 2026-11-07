@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "script_version": "1.0.0",
+  "script_sha256": "fc938b1ff2a8a40bb7e2343245d69a031717f4e218eab8c3f22b27feee035c74",
+  "started_at_utc": "2026-11-04T03:06:37.708494+00:00",
+  "started_at_china_time": "2026-11-04T11:06:37.708494+08:00",
+  "expected_environment": {
+    "gpu_name": "NVIDIA GeForce RTX 3090",
+    "python": "3.10",
+    "torch": "2.1.2",
+    "torch_cuda_runtime": "11.8",
+    "os": "Ubuntu 22.04"
+  },
+  "selected_cuda_logical_device": 0,
+  "output_directory": "/root/autodl-tmp/rdrop-mrpc-project/reports/environment/20261104_110637_CN_3znn2mh9",
+  "checks": [
+    {
+      "name": "python_version",
+      "status": "PASS",
+      "detail": "actual=3.10, expected=3.10"
+    },
+    {
+      "name": "operating_system",
+      "status": "PASS",
+      "detail": "Ubuntu 22.04.1 LTS"
+    },
+    {
+      "name": "optional_packages",
+      "status": "INFO",
+      "detail": "Not installed (prepare in next step): transformers, datasets, tokenizers, huggingface-hub, accelerate, evaluate, scikit-learn, scipy, safetensors"
+    },
+    {
+      "name": "project_directory_writable",
+      "status": "PASS",
+      "detail": "/root/autodl-tmp/rdrop-mrpc-project"
+    },
+    {
+      "name": "project_disk_space",
+      "status": "PASS",
+      "detail": "Filesystem reports 50.00 GiB free; also check instance quota."
+    },
+    {
+      "name": "project_location",
+      "status": "PASS",
+      "detail": "Project is under /root/autodl-tmp."
+    },
+    {
+      "name": "nvidia_smi",
+      "status": "PASS",
+      "detail": "GPU/driver inventory saved; logical CUDA indices may differ."
+    },
+    {
+      "name": "torch_import",
+      "status": "PASS",
+      "detail": "2.1.2+cu118"
+    },
+    {
+      "name": "torch_version",
+      "status": "PASS",
+      "detail": "actual=2.1.2+cu118, expected=2.1.2"
+    },
+    {
+      "name": "torch_cuda_runtime",
+      "status": "PASS",
+      "detail": "actual=11.8, expected=11.8; separate from nvidia-smi."
+    },
+    {
+      "name": "cuda_available",
+      "status": "PASS",
+      "detail": "Using cuda:0: NVIDIA GeForce RTX 3090"
+    },
+    {
+      "name": "gpu_model",
+      "status": "PASS",
+      "detail": "actual=NVIDIA GeForce RTX 3090, expected=NVIDIA GeForce RTX 3090"
+    },
+    {
+      "name": "gpu_free_memory",
+      "status": "PASS",
+      "detail": "23.30 GiB free before tiny check; other GPU tasks can affect this."
+    },
+    {
+      "name": "fp32_forward_backward_update",
+      "status": "PASS",
+      "detail": "loss=0.710565; finite gradients; parameters updated."
+    },
+    {
+      "name": "fp16_amp_forward_backward_update",
+      "status": "PASS",
+      "detail": "loss=0.710587; finite gradients; parameters updated."
+    }
+  ],
+  "scope": "Environment check only; not MRPC training or a performance benchmark.",
+  "system": {
+    "platform": "Linux-5.15.0-135-generic-x86_64-with-glibc2.35",
+    "os_release": {
+      "PRETTY_NAME": "Ubuntu 22.04.1 LTS",
+      "NAME": "Ubuntu",
+      "VERSION_ID": "22.04",
+      "VERSION": "22.04.1 LTS (Jammy Jellyfish)",
+      "VERSION_CODENAME": "jammy",
+      "ID": "ubuntu",
+      "ID_LIKE": "debian",
+      "HOME_URL": "https://www.ubuntu.com/",
+      "SUPPORT_URL": "https://help.ubuntu.com/",
+      "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+      "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+      "UBUNTU_CODENAME": "jammy"
+    },
+    "architecture": "x86_64",
+    "python": "3.10.8 (main, Nov 24 2022, 14:13:03) [GCC 11.2.0]",
+    "python_executable": "/root/miniconda3/bin/python",
+    "cpu": {
+      "model": "Intel(R) Xeon(R) Gold 6330 CPU @ 2.00GHz",
+      "os_logical_cpus": 112,
+      "affinity_cpus": 112,
+      "cgroup_quota_cores": 14.0
+    },
+    "memory": {
+      "MemTotal_bytes": 810969751552,
+      "MemAvailable_bytes": 760158978048,
+      "cgroup_limit_bytes": 96636764160,
+      "effective_capacity_estimate_bytes": 96636764160,
+      "note": "Host RAM and container limits are separate; limits may be unavailable."
+    },
+    "project_root": "/root/autodl-tmp/rdrop-mrpc-project",
+    "cuda_visible_devices": "<not set>"
+  },
+  "packages": {
+    "torch": "2.1.2+cu118",
+    "numpy": "1.26.4",
+    "transformers": null,
+    "datasets": null,
+    "tokenizers": null,
+    "huggingface-hub": null,
+    "accelerate": null,
+    "evaluate": null,
+    "scikit-learn": null,
+    "scipy": null,
+    "safetensors": null,
+    "protobuf": "4.25.3",
+    "packaging": "24.1"
+  },
+  "storage": {
+    "filesystems": [
+      {
+        "path": "/root/autodl-tmp/rdrop-mrpc-project",
+        "total_bytes": 53687091200,
+        "used_bytes": 102400,
+        "free_bytes": 53686988800
+      },
+      {
+        "path": "/root/autodl-tmp",
+        "total_bytes": 53687091200,
+        "used_bytes": 102400,
+        "free_bytes": 53686988800
+      },
+      {
+        "path": "/",
+        "total_bytes": 32212254720,
+        "used_bytes": 1340813312,
+        "free_bytes": 30871441408
+      }
+    ],
+    "note": "Filesystem capacity may exceed the instance quota. Also check AutoDL's disk panel."
+  },
+  "nvidia_smi": {
+    "command": [
+      "nvidia-smi",
+      "--query-gpu=index,name,uuid,driver_version,memory.total,memory.used,utilization.gpu,temperature.gpu",
+      "--format=csv,noheader,nounits"
+    ],
+    "returncode": 0,
+    "stdout": "0, NVIDIA GeForce RTX 3090, GPU-deee7a72-8a0c-61a0-daaf-601d37c7b23e, 580.105.08, 24576, 0, 0, 28",
+    "stderr": "",
+    "gpus": [
+      {
+        "physical_index": "0",
+        "name": "NVIDIA GeForce RTX 3090",
+        "uuid": "GPU-deee7a72-8a0c-61a0-daaf-601d37c7b23e",
+        "driver_version": "580.105.08",
+        "memory_total_mib": "24576",
+        "memory_used_mib": "0",
+        "utilization_percent": "0",
+        "temperature_c": "28"
+      }
+    ]
+  },
+  "torch": {
+    "version": "2.1.2+cu118",
+    "cuda_runtime": "11.8",
+    "cudnn_version": 8700,
+    "cuda_available": true,
+    "visible_device_count": 1,
+    "selected_gpu": {
+      "logical_index": 0,
+      "name": "NVIDIA GeForce RTX 3090",
+      "compute_capability": [
+        8,
+        6
+      ],
+      "total_memory_bytes": 25296044032,
+      "free_memory_before_test_bytes": 25019023360,
+      "cuda_reported_total_memory_bytes": 25296044032,
+      "supported_architectures_in_build": [
+        "sm_50",
+        "sm_60",
+        "sm_70",
+        "sm_75",
+        "sm_80",
+        "sm_86",
+        "sm_37",
+        "sm_90"
+      ]
+    }
+  },
+  "gpu_smoke_tests": {
+    "fp32": {
+      "status": "PASS",
+      "device": "cuda:0",
+      "logits_dtype": "torch.float32",
+      "loss": 0.7105650901794434,
+      "gradient_l2_norm": 0.9478825524710595,
+      "parameters_updated": true,
+      "elapsed_seconds": 0.3809368535876274,
+      "peak_allocated_bytes": 17207808,
+      "peak_reserved_bytes": 23068672,
+      "note": "Tiny diagnostic only. Timing includes setup; not a training cost measurement."
+    },
+    "fp16_amp": {
+      "status": "PASS",
+      "device": "cuda:0",
+      "logits_dtype": "torch.float16",
+      "loss": 0.7105865478515625,
+      "gradient_l2_norm": 0.9479744777112251,
+      "parameters_updated": true,
+      "elapsed_seconds": 0.057042282074689865,
+      "peak_allocated_bytes": 18191360,
+      "peak_reserved_bytes": 23068672,
+      "note": "Tiny diagnostic only. Timing includes setup; not a training cost measurement."
+    }
+  },
+  "overall_status": "PASS",
+  "finished_at_utc": "2026-11-04T03:06:39.886298+00:00"
+}

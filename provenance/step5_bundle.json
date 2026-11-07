@@ -1,0 +1,62 @@
+{
+  "step": 5,
+  "purpose": "Frozen full-data baseline seed 13 code/configuration",
+  "protocol_id": "mrpc_bert_cased_v1",
+  "files": [
+    {
+      "path": "src/__init__.py",
+      "size": 73,
+      "sha256": "81d2d454cd91ce2ec8d1b1ee816e43b09bbfd275c56fa9286a87ec42db46afb1"
+    },
+    {
+      "path": "src/baseline_model.py",
+      "size": 1173,
+      "sha256": "e036e6bfa7c7cfd880689fb1e25ef7b0eb654f16c586efad6edcc750a924e87a"
+    },
+    {
+      "path": "src/training_core.py",
+      "size": 9331,
+      "sha256": "4b29c3914d4de873fe88a9ac0b413b8a075e88b295d81cc87d366e6b1cb433d2"
+    },
+    {
+      "path": "src/experiment_runner.py",
+      "size": 12607,
+      "sha256": "3daa776474e54912eec8a947b895a7c9a6dbb67b9bfcc52688934f7b1ea31b31"
+    },
+    {
+      "path": "scripts/asset_utils.py",
+      "size": 5119,
+      "sha256": "a1d615cbaa22601b5f5a83221013352898157d4d6ae0ec4d5ba0d870f1962a5d"
+    },
+    {
+      "path": "scripts/baseline_formal_runtime.py",
+      "size": 10590,
+      "sha256": "6f503642825f68ce0cbfb2e68a5791003e0ee836914e19706287076383f8f6b3"
+    },
+    {
+      "path": "scripts/run_step5.py",
+      "size": 6667,
+      "sha256": "a059f79aa4f64d5b85211400c0b82ed10e03a10bf3a86cbc915bcf11e423f3c4"
+    },
+    {
+      "path": "configs/training_protocol_v1.json",
+      "size": 3951,
+      "sha256": "3d6a5fe3090614ad5061edcffe8558a7074f6b6b605509232d2d9742c4baaebd"
+    },
+    {
+      "path": "configs/baseline_seed13.json",
+      "size": 664,
+      "sha256": "30aac77d727cee0d7b6175484d7df3c217fff6f159beb86d06bc0a0d49de6a47"
+    },
+    {
+      "path": "tests/test_step5_experiment.py",
+      "size": 7849,
+      "sha256": "4c5eb86aa5542cba6450802b62461db79a7e9f2a83d9e6aee2722748c7c4e29c"
+    },
+    {
+      "path": "provenance/wheels.json",
+      "size": 52701,
+      "sha256": "289f55333cbec6f81507e9a0c606e0374ce21b3c4c97dd6ba55b90f7d113ada2"
+    }
+  ]
+}

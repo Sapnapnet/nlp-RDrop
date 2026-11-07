@@ -1,0 +1,104 @@
+--- scripts/baseline_formal_runtime.py
++++ scripts/baseline_multiseed_runtime.py
+@@ -1,4 +1,4 @@
+-"""Offline full MRPC baseline, currently restricted to the approved seed 13 run."""
++"""Offline full MRPC baseline for the approved additional seeds 21 and 42."""
+ from __future__ import annotations
+ from datetime import datetime, timezone
+ import argparse
+@@ -16,6 +16,18 @@
+ from asset_utils import canonical, read_rows, sha256_file
+ 
+ 
++def load_run_config(seed):
++    if seed not in (21, 42):
++        raise ValueError("Only the two approved additional seeds are allowed.")
++    config = json.loads((ROOT / f"configs/baseline_seed{seed}.json").read_text(encoding="utf-8"))
++    expected = json.loads((ROOT / "configs/baseline_seed13.json").read_text(encoding="utf-8"))
++    expected.pop("validated_seed13_initial_state_sha256")
++    expected["seed"] = seed
++    if config != expected:
++        raise RuntimeError("Additional seed settings must exactly match seed 13, except seed and its initial-state check.")
++    return config
++
++
+ def nvidia_snapshot():
+     commands = [
+         ["nvidia-smi", "--query-gpu=index,uuid,name,driver_version,memory.total,memory.used,utilization.gpu,power.limit", "--format=csv"],
+@@ -31,7 +43,7 @@
+     return result
+ 
+ 
+-def run(output, report):
++def run(output, report, seed):
+     import torch
+     import transformers
+     from sklearn.metrics import accuracy_score, f1_score
+@@ -41,10 +53,10 @@
+     from src.experiment_runner import run_experiment, write_json
+ 
+     protocol = json.loads((ROOT / "configs/training_protocol_v1.json").read_text(encoding="utf-8"))
+-    config = json.loads((ROOT / "configs/baseline_seed13.json").read_text(encoding="utf-8"))
++    config = load_run_config(seed)
+     inputs = json.loads((ROOT / "configs/input_protocol.json").read_text(encoding="utf-8"))
+-    if (config["seed"], config["max_updates"], config["warmup_updates"], config["train_rows"], config["dev_rows"]) != (13, 2296, 137, 3668, 408):
+-        raise RuntimeError("This phase authorizes exactly full-data baseline seed 13, 2296 updates and warmup 137.")
++    if (config["seed"], config["max_updates"], config["warmup_updates"], config["train_rows"], config["dev_rows"]) != (seed, 2296, 137, 3668, 408):
++        raise RuntimeError("This phase authorizes only full-data baseline seeds 21/42, 2296 updates and warmup 137.")
+     if config["condition"] != "baseline" or config["resume_training"] or config["start_weights"] != inputs["model"]["local_path"]:
+         raise RuntimeError("Start a fresh baseline from the fixed pretrained model.")
+     for key in ("max_updates", "warmup_updates", "train_rows", "dev_rows"):
+@@ -69,11 +81,15 @@
+         "transformers": transformers.__version__, "bert_source_sha256": source_sha, "package_versions": versions}
+     report["resolved_config"] = {"protocol": protocol, "run": config, "inputs": inputs}
+     report["identities"] = {"protocol_sha256": sha256_file(ROOT / "configs/training_protocol_v1.json"),
+-        "run_config_sha256": sha256_file(ROOT / "configs/baseline_seed13.json"),
++        "run_config_sha256": sha256_file(ROOT / f"configs/baseline_seed{seed}.json"),
+         "input_manifest_sha256": sha256_file(ROOT / "provenance/assets.json"),
+-        "code_manifest_sha256": sha256_file(ROOT / "provenance/step5_bundle.json"),
++        "code_manifest_sha256": sha256_file(ROOT / "provenance/step6_bundle.json"),
+         "training_core_sha256": sha256_file(ROOT / "src/training_core.py")}
+     report["nvidia_before"] = nvidia_snapshot()
++    from baseline_summary import gpu_identity, load_json
++    anchor = load_json(ROOT / "provenance/step6_seed13_anchor.json")
++    if gpu_identity(report["nvidia_before"]) != anchor["gpu_identity"]:
++        raise RuntimeError("GPU UUID/driver/power limit differs from the accepted seed 13 run.")
+     torch.set_num_threads(4)
+     seed_everything(config["seed"])
+     rows = {s: read_rows(ROOT / f"data/mrpc/{s}.jsonl") for s in ("train", "validation")}
+@@ -112,7 +128,7 @@
+         if any(enc[k] != tensors["validation"][k].tolist() for k in keys):
+             raise RuntimeError("Saved tokenizer changed dev encodings.")
+ 
+-    print("Validated complete MRPC encodings and pretrained source. Starting seed 13.", flush=True)
++    print(f"Validated complete MRPC encodings and pretrained source. Starting seed {seed}.", flush=True)
+     run_experiment(model, tokenizer, tensors, native_ids, output, protocol, config, torch.device("cuda:0"), report,
+                    reload_tokenizer_check=check_reloaded_tokenizer)
+     predictions = read_rows(output / "predictions_dev.jsonl")
+@@ -125,7 +141,7 @@
+     report["finished_at_utc"] = datetime.now(timezone.utc).isoformat()
+     write_json(output / "formal_report.json", report)
+     write_json(output / "result.json", {
+-        "status": "PASS", "condition": "baseline", "seed": 13, "protocol_id": protocol["protocol_id"],
++        "status": "PASS", "condition": "baseline", "seed": seed, "protocol_id": protocol["protocol_id"],
+         "protocol_sha256": report["identities"]["protocol_sha256"], "code_manifest_sha256": report["identities"]["code_manifest_sha256"],
+         "input_manifest_sha256": report["identities"]["input_manifest_sha256"], "dev_examples": len(predictions),
+         "accuracy": metrics["accuracy"], "f1": metrics["f1"],
+@@ -144,12 +160,14 @@
+ def main():
+     parser = argparse.ArgumentParser(description=__doc__)
+     parser.add_argument("--output-dir", type=Path, required=True)
+-    output = parser.parse_args().output_dir
++    parser.add_argument("--seed", type=int, choices=(21, 42), required=True)
++    args = parser.parse_args()
++    output, seed = args.output_dir, args.seed
+     from src.experiment_runner import write_json
+-    report = {"step": 5, "condition": "baseline", "seed": 13, "purpose": "formal_baseline_single_seed",
++    report = {"step": 6, "condition": "baseline", "seed": seed, "purpose": "formal_baseline_single_seed",
+               "overall_status": "RUNNING", "phase": "preparing", "started_at_utc": datetime.now(timezone.utc).isoformat()}
+     try:
+-        run(output, report)
++        run(output, report, seed)
+     except BaseException:
+         report["overall_status"] = "FAIL"
+         report["traceback"] = traceback.format_exc()

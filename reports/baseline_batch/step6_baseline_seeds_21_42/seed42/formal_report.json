@@ -1,0 +1,435 @@
+{
+  "step": 6,
+  "condition": "baseline",
+  "seed": 42,
+  "purpose": "formal_baseline_single_seed",
+  "overall_status": "PASS",
+  "phase": "complete",
+  "started_at_utc": "2026-11-04T04:56:57.875787+00:00",
+  "runtime": {
+    "python": "3.10.8 (main, Nov 24 2022, 14:13:03) [GCC 11.2.0]",
+    "executable": "/root/autodl-tmp/rdrop-mrpc-project/.venv/bin/python",
+    "torch": "2.1.2+cu118",
+    "cuda_runtime": "11.8",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "cudnn": 8700,
+    "transformers": "4.6.0.dev0",
+    "bert_source_sha256": "1316e7d6990cd9a12f08689dbb3cf0fcd5b165bcc981e519f46babe5f66cbf06",
+    "package_versions": {
+      "aiohttp": "3.9.5",
+      "aiosignal": "1.3.1",
+      "async-timeout": "4.0.3",
+      "attrs": "23.2.0",
+      "certifi": "2026.10.23",
+      "charset-normalizer": "3.3.2",
+      "click": "8.1.7",
+      "colorama": "0.4.6",
+      "datasets": "2.19.2",
+      "dill": "0.3.8",
+      "filelock": "3.15.4",
+      "frozenlist": "1.4.1",
+      "fsspec": "2024.3.1",
+      "huggingface-hub": "0.23.5",
+      "idna": "3.7",
+      "joblib": "1.4.2",
+      "multidict": "6.0.5",
+      "multiprocess": "0.70.16",
+      "numpy": "1.26.4",
+      "packaging": "24.1",
+      "pandas": "2.2.2",
+      "pip": "24.0",
+      "psutil": "5.9.8",
+      "pyarrow": "16.1.0",
+      "pyarrow-hotfix": "0.6",
+      "python-dateutil": "2.9.0.post0",
+      "pytz": "2024.1",
+      "PyYAML": "6.0.1",
+      "regex": "2024.5.15",
+      "requests": "2.32.3",
+      "sacremoses": "0.1.1",
+      "scikit-learn": "1.4.2",
+      "scipy": "1.13.1",
+      "setuptools": "69.5.1",
+      "six": "1.16.0",
+      "threadpoolctl": "3.5.0",
+      "tokenizers": "0.13.3",
+      "tqdm": "4.66.4",
+      "typing_extensions": "4.12.2",
+      "tzdata": "2024.1",
+      "urllib3": "2.2.2",
+      "wheel": "0.43.0",
+      "xxhash": "3.4.1",
+      "yarl": "1.9.4"
+    }
+  },
+  "resolved_config": {
+    "protocol": {
+      "schema_version": 2,
+      "status": "Frozen for the user-authorized full-data baseline seed 13. B must match this protocol and validate R-Drop; if shared settings change, rerun affected conditions.",
+      "input_protocol_path": "configs/input_protocol.json",
+      "input_manifest_sha256": "f488231f82092add462278044fbe2dc96ee2ec2fb2e8face4f77464752c6bbdd",
+      "seeds": [
+        13,
+        21,
+        42
+      ],
+      "conditions": [
+        "baseline",
+        "rdrop_alpha0",
+        "rdrop_alpha0.5",
+        "rdrop_alpha1"
+      ],
+      "microbatch_size": 8,
+      "gradient_accumulation_steps": 2,
+      "effective_batch_size_nominal": 16,
+      "last_update_policy": "Keep all rows; flush at epoch end; average microbatch losses weighted by their actual row counts. Final update of a full epoch has 4 rows.",
+      "sampling": "Independent Python Random(seed + zero_based_epoch).shuffle; no global dropout RNG consumption; no replacement within each epoch.",
+      "train_precision": "fp16_amp",
+      "amp_init_scale": 128.0,
+      "amp_growth_interval": 2000,
+      "eval_precision": "fp32",
+      "eval_batch_size": 16,
+      "max_grad_norm": 1.0,
+      "optimizer": {
+        "class": "torch.optim.AdamW",
+        "learning_rate": 1e-05,
+        "betas": [
+          0.9,
+          0.98
+        ],
+        "eps": 1e-06,
+        "weight_decay": 0.01,
+        "no_decay": [
+          "bias",
+          "LayerNorm.weight"
+        ],
+        "foreach": false
+      },
+      "scheduler": {
+        "type": "polynomial",
+        "power": 1.0,
+        "end_learning_rate": 1e-07,
+        "step_order": "optimizer then scheduler; initial warmup LR is zero, following the author schedule convention"
+      },
+      "loss_contract": {
+        "baseline": "CE averaged over examples",
+        "rdrop": "0.5 * (CE1_mean + CE2_mean) + alpha * 0.5 * (KL12_batchmean + KL21_batchmean)",
+        "kl_reduction": "sum over classes then mean over examples, computed in float32 with gradients through both distributions",
+        "alpha_values": [
+          0.0,
+          0.5,
+          1.0
+        ],
+        "alpha_zero": "still two stochastic forwards and two CE terms; not numerical equality to baseline",
+        "source_note": "B must adapt the pinned author's bert_kl implementation and document the CE/KL normalization change; original source is unchanged in step 4."
+      },
+      "determinism": {
+        "deterministic_algorithms": true,
+        "cudnn_benchmark": false,
+        "tf32": false,
+        "cublas_workspace_config": ":4096:8"
+      },
+      "cost_reporting": {
+        "same_gpu_sequential": true,
+        "updates": "Actual optimizer.step calls; abort and retain failed-run artifacts on nonfinite gradients or AMP skips. Initial warmup LR=0 still counts as one call.",
+        "examples_seen": "training sample visits, including later epochs; distinct IDs recorded separately",
+        "encoder_example_passes": "counts duplicate R-Drop passes; not FLOPs",
+        "train_seconds": "CUDA-synchronized full training loop including update checks, sample selection/transfers, hook counting and logging; excludes preprocessing, evaluation, save and reload.",
+        "formal_note": "Use the identical training_core.py and logging interval for all conditions. Report instrumented wall-clock training cost, not pure kernel time. Keep first-step startup overhead.",
+        "secondary_timer": "Sum of synchronized update-body durations from train_update; excludes outer-loop logging and bookkeeping. Do not substitute it for total training wall time.",
+        "gpu_memory": "Reset CUDA peaks immediately before training; record allocated and reserved bytes before evaluation."
+      },
+      "protocol_id": "mrpc_bert_cased_v1",
+      "derived_from_step4_protocol_sha256": "a6632aba3bc7abdbb3d588d1de2a637ca37d1ecd13560839006b73d1a74d3d7a",
+      "formal": {
+        "max_updates": 2296,
+        "warmup_updates": 137,
+        "train_rows": 3668,
+        "dev_rows": 408,
+        "checkpoint_selection": "last update for every condition and seed; no best-dev checkpoint selection",
+        "evaluation": "full dev after final update"
+      },
+      "log_every_updates": 100
+    },
+    "run": {
+      "schema_version": 1,
+      "purpose": "formal_baseline_single_seed",
+      "protocol_path": "configs/training_protocol_v1.json",
+      "condition": "baseline",
+      "seed": 42,
+      "max_updates": 2296,
+      "warmup_updates": 137,
+      "train_rows": 3668,
+      "dev_rows": 408,
+      "expected_microbatches": 4583,
+      "expected_training_example_visits": 36628,
+      "expected_encoder_forward_calls": 4583,
+      "expected_encoder_example_passes": 36628,
+      "checkpoint_selection": "last_update",
+      "resume_training": false,
+      "start_weights": "models/bert-base-cased"
+    },
+    "inputs": {
+      "schema_version": 1,
+      "scope": "Shared model, data and tokenization only; training hyperparameters are defined in the next step.",
+      "model": {
+        "repository": "google-bert/bert-base-cased",
+        "revision": "cd5ef92a9fb2f889e972770a36d4ed042daf221e",
+        "local_path": "models/bert-base-cased",
+        "weight_file": "pytorch_model.bin",
+        "num_labels": 2,
+        "classifier_initialization": "Random, set the experiment seed before from_pretrained."
+      },
+      "dataset": {
+        "repository": "nyu-mll/glue",
+        "revision": "bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c",
+        "subset": "mrpc",
+        "train_path": "data/mrpc/train.jsonl",
+        "validation_path": "data/mrpc/validation.jsonl",
+        "train_rows": 3668,
+        "validation_rows": 408,
+        "validation_report_name": "dev",
+        "label_names": {
+          "0": "not_equivalent",
+          "1": "equivalent"
+        },
+        "preserve_original_order_and_text": true,
+        "test_used": false
+      },
+      "tokenization": {
+        "class": "BertTokenizerFast",
+        "do_lower_case": false,
+        "max_length": 128,
+        "padding": "max_length",
+        "truncation": "longest_first",
+        "add_special_tokens": true,
+        "return_token_type_ids": true,
+        "return_attention_mask": true
+      },
+      "evaluation": {
+        "split": "validation",
+        "prediction": "argmax over two logits",
+        "accuracy": "fraction correct",
+        "f1_average": "binary",
+        "f1_pos_label": 1,
+        "f1_zero_division": 0,
+        "selection_note": "If dev is used to select hyperparameters/checkpoints, reported scores remain dev scores, not independent test scores."
+      }
+    }
+  },
+  "identities": {
+    "protocol_sha256": "3d6a5fe3090614ad5061edcffe8558a7074f6b6b605509232d2d9742c4baaebd",
+    "run_config_sha256": "dedac36c783eddb5aba32f4468a7393f003b5c1399e7bd51c843dff7a155078e",
+    "input_manifest_sha256": "f488231f82092add462278044fbe2dc96ee2ec2fb2e8face4f77464752c6bbdd",
+    "code_manifest_sha256": "ce8f9fc427d6371d47500bd8151728b3ffb88551a9767ff19fcea49a879cb04b",
+    "training_core_sha256": "4b29c3914d4de873fe88a9ac0b413b8a075e88b295d81cc87d366e6b1cb433d2"
+  },
+  "nvidia_before": [
+    {
+      "command": [
+        "nvidia-smi",
+        "--query-gpu=index,uuid,name,driver_version,memory.total,memory.used,utilization.gpu,power.limit",
+        "--format=csv"
+      ],
+      "returncode": 0,
+      "stdout": "index, uuid, name, driver_version, memory.total [MiB], memory.used [MiB], utilization.gpu [%], power.limit [W]\n0, GPU-deee7a72-8a0c-61a0-daaf-601d37c7b23e, NVIDIA GeForce RTX 3090, 580.105.08, 24576 MiB, 3 MiB, 0 %, 350.00 W\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "nvidia-smi",
+        "--query-compute-apps=pid,process_name,used_gpu_memory",
+        "--format=csv"
+      ],
+      "returncode": 0,
+      "stdout": "pid, process_name, used_gpu_memory [MiB]\n",
+      "stderr": ""
+    }
+  ],
+  "encoding_sha256": {
+    "train": "e3386878dc71f69f76c65c3a6bed847b755e9a4709ccd802303ecf0527df7d93",
+    "validation": "29f536e548417d0bb2bc37eade5b2e7359242947fbbd3f72425057b2614b228e"
+  },
+  "pretrained_loading": {
+    "missing_keys": [
+      "classifier.weight",
+      "classifier.bias"
+    ],
+    "unexpected_keys": [
+      "cls.predictions.bias",
+      "cls.predictions.transform.dense.weight",
+      "cls.predictions.transform.dense.bias",
+      "cls.predictions.decoder.weight",
+      "cls.seq_relationship.weight",
+      "cls.seq_relationship.bias",
+      "cls.predictions.transform.LayerNorm.weight",
+      "cls.predictions.transform.LayerNorm.bias"
+    ],
+    "error_msgs": []
+  },
+  "initial_state_sha256": "5315f3c9408944fc3e7f47b2d368a9de15b678b54dc5edbe25620fd9ed41c8e5",
+  "planned_workload": {
+    "optimizer_updates": 2296,
+    "microbatches": 4583,
+    "example_visits": 36628,
+    "update_size_counts": {
+      "4": 9,
+      "16": 2287
+    },
+    "epochs_entered": 10
+  },
+  "batch_plan_sha256": "371eeac990bbbde9b778c801d828d77e546d7b30a512f3a34af2c6c2baabcd42",
+  "effective_precision": "fp16_amp",
+  "completed_updates": 2296,
+  "training": {
+    "optimizer_step_calls": 2296,
+    "microbatches": 4583,
+    "examples_seen": 36628,
+    "distinct_native_ids_seen": 3668,
+    "forward_counts": {
+      "encoder_forward_calls": 4583,
+      "encoder_example_passes": 36628,
+      "padded_token_positions": 4688384
+    },
+    "train_loop_wall_seconds": 333.095121614635,
+    "mean_wall_seconds_per_update": 0.1450762724802417,
+    "sum_update_body_seconds": 329.57829389348626,
+    "mean_update_body_seconds": 0.1435445530894975,
+    "amp_skipped_updates": 0,
+    "all_gradient_norms_finite": true,
+    "classifier_max_abs_change": 0.0037383586168289185,
+    "encoder_probe_max_abs_change": 0.0014615319669246674,
+    "peak_allocated_bytes": 2607745024,
+    "peak_reserved_bytes": 2940207104
+  },
+  "epoch_training_summary": [
+    {
+      "epoch": 0,
+      "updates": 230,
+      "sample_visits": 3668,
+      "sample_weighted_mean_training_loss": 0.5893215067124029
+    },
+    {
+      "epoch": 1,
+      "updates": 230,
+      "sample_visits": 3668,
+      "sample_weighted_mean_training_loss": 0.4371275490996882
+    },
+    {
+      "epoch": 2,
+      "updates": 230,
+      "sample_visits": 3668,
+      "sample_weighted_mean_training_loss": 0.27158744046576283
+    },
+    {
+      "epoch": 3,
+      "updates": 230,
+      "sample_visits": 3668,
+      "sample_weighted_mean_training_loss": 0.16654696095340774
+    },
+    {
+      "epoch": 4,
+      "updates": 230,
+      "sample_visits": 3668,
+      "sample_weighted_mean_training_loss": 0.10172217648837922
+    },
+    {
+      "epoch": 5,
+      "updates": 230,
+      "sample_visits": 3668,
+      "sample_weighted_mean_training_loss": 0.07270549739850127
+    },
+    {
+      "epoch": 6,
+      "updates": 230,
+      "sample_visits": 3668,
+      "sample_weighted_mean_training_loss": 0.04716834422676228
+    },
+    {
+      "epoch": 7,
+      "updates": 230,
+      "sample_visits": 3668,
+      "sample_weighted_mean_training_loss": 0.03240128903118579
+    },
+    {
+      "epoch": 8,
+      "updates": 230,
+      "sample_visits": 3668,
+      "sample_weighted_mean_training_loss": 0.0302028865304612
+    },
+    {
+      "epoch": 9,
+      "updates": 226,
+      "sample_visits": 3616,
+      "sample_weighted_mean_training_loss": 0.02687602101174076
+    }
+  ],
+  "dev_metrics": {
+    "accuracy": 0.8308823529411765,
+    "f1": 0.8824531516183987,
+    "tp": 259,
+    "tn": 80,
+    "fp": 49,
+    "fn": 20,
+    "num_examples": 408,
+    "loss_mean": 0.941032928610951,
+    "evaluation_seconds": 0.7017688062041998,
+    "precision": "fp32",
+    "split": "validation",
+    "checkpoint_selection": "last_update"
+  },
+  "checkpoint_save_and_state_hash_seconds": 1.0007779113948345,
+  "final_state_sha256": "fcfa5e0aa72a680675c4826f37a4b6a604828f4cbacf88fedfd28d6335a75ef2",
+  "forward_counts": {
+    "train": {
+      "encoder_forward_calls": 4583,
+      "encoder_example_passes": 36628,
+      "padded_token_positions": 4688384
+    },
+    "eval": {
+      "encoder_forward_calls": 26,
+      "encoder_example_passes": 408,
+      "padded_token_positions": 52224
+    }
+  },
+  "checkpoint_reload": {
+    "state_sha256_equal": true,
+    "predictions_equal": true,
+    "metrics_equal": true,
+    "max_abs_logit_difference": 0.0,
+    "tokenizer_checked": true,
+    "reload_seconds": 3.270605683326721,
+    "training_resume_tested": false,
+    "forward_counts": {
+      "reload_eval": {
+        "encoder_forward_calls": 26,
+        "encoder_example_passes": 408,
+        "padded_token_positions": 52224
+      }
+    }
+  },
+  "finished_at_utc": "2026-11-04T05:02:41.547525+00:00",
+  "metrics_verified_with_sklearn": true,
+  "nvidia_after": [
+    {
+      "command": [
+        "nvidia-smi",
+        "--query-gpu=index,uuid,name,driver_version,memory.total,memory.used,utilization.gpu,power.limit",
+        "--format=csv"
+      ],
+      "returncode": 0,
+      "stdout": "index, uuid, name, driver_version, memory.total [MiB], memory.used [MiB], utilization.gpu [%], power.limit [W]\n0, GPU-deee7a72-8a0c-61a0-daaf-601d37c7b23e, NVIDIA GeForce RTX 3090, 580.105.08, 24576 MiB, 1011 MiB, 41 %, 350.00 W\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "nvidia-smi",
+        "--query-compute-apps=pid,process_name,used_gpu_memory",
+        "--format=csv"
+      ],
+      "returncode": 0,
+      "stdout": "pid, process_name, used_gpu_memory [MiB]\n7772, /root/autodl-tmp/rdrop-mrpc-project/.venv/bin/python, 1002 MiB\n",
+      "stderr": ""
+    }
+  ]
+}

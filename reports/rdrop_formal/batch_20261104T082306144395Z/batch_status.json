@@ -1,0 +1,84 @@
+{
+  "overall_status": "PASS",
+  "started_at_utc": "2026-11-04T08:23:06.144469+00:00",
+  "planned_alphas": [
+    0.0,
+    0.5,
+    1.0
+  ],
+  "planned_seeds": [
+    13,
+    21,
+    42
+  ],
+  "completed_runs": [
+    {
+      "condition": "rdrop_alpha0",
+      "seed": 13,
+      "accuracy": 0.8161764705882353,
+      "f1": 0.8752079866888519,
+      "run_path": "reports/rdrop_formal/batch_20261104T082306144395Z/rdrop_alpha0/seed13"
+    },
+    {
+      "condition": "rdrop_alpha0",
+      "seed": 21,
+      "accuracy": 0.8357843137254902,
+      "f1": 0.8842832469775475,
+      "run_path": "reports/rdrop_formal/batch_20261104T082306144395Z/rdrop_alpha0/seed21"
+    },
+    {
+      "condition": "rdrop_alpha0",
+      "seed": 42,
+      "accuracy": 0.8455882352941176,
+      "f1": 0.8911917098445595,
+      "run_path": "reports/rdrop_formal/batch_20261104T082306144395Z/rdrop_alpha0/seed42"
+    },
+    {
+      "condition": "rdrop_alpha0.5",
+      "seed": 13,
+      "accuracy": 0.8284313725490197,
+      "f1": 0.8841059602649006,
+      "run_path": "reports/rdrop_formal/batch_20261104T082306144395Z/rdrop_alpha0.5/seed13"
+    },
+    {
+      "condition": "rdrop_alpha0.5",
+      "seed": 21,
+      "accuracy": 0.8455882352941176,
+      "f1": 0.8904347826086957,
+      "run_path": "reports/rdrop_formal/batch_20261104T082306144395Z/rdrop_alpha0.5/seed21"
+    },
+    {
+      "condition": "rdrop_alpha0.5",
+      "seed": 42,
+      "accuracy": 0.8382352941176471,
+      "f1": 0.8865979381443299,
+      "run_path": "reports/rdrop_formal/batch_20261104T082306144395Z/rdrop_alpha0.5/seed42"
+    },
+    {
+      "condition": "rdrop_alpha1",
+      "seed": 13,
+      "accuracy": 0.821078431372549,
+      "f1": 0.8785357737104825,
+      "run_path": "reports/rdrop_formal/batch_20261104T082306144395Z/rdrop_alpha1/seed13"
+    },
+    {
+      "condition": "rdrop_alpha1",
+      "seed": 21,
+      "accuracy": 0.8406862745098039,
+      "f1": 0.8865619546247818,
+      "run_path": "reports/rdrop_formal/batch_20261104T082306144395Z/rdrop_alpha1/seed21"
+    },
+    {
+      "condition": "rdrop_alpha1",
+      "seed": 42,
+      "accuracy": 0.8357843137254902,
+      "f1": 0.8838821490467937,
+      "run_path": "reports/rdrop_formal/batch_20261104T082306144395Z/rdrop_alpha1/seed42"
+    }
+  ],
+  "failed_run": null,
+  "output_directory": "/root/autodl-tmp/rdrop-mrpc-project/reports/rdrop_formal/batch_20261104T082306144395Z",
+  "summary_json": "/root/autodl-tmp/rdrop-mrpc-project/reports/rdrop_formal/batch_20261104T082306144395Z/rdrop_results.json",
+  "summary_markdown": "/root/autodl-tmp/rdrop-mrpc-project/reports/rdrop_formal/batch_20261104T082306144395Z/rdrop_results.md",
+  "finished_at_utc": "2026-11-04T09:54:07.842946+00:00"
+}

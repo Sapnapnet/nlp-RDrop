@@ -1,0 +1,22 @@
+--- a/huggingface_transformer_src/setup.py
++++ b/huggingface_transformer_src/setup.py
+@@ -139,7 +139,7 @@
+     "tensorflow-cpu>=2.3",
+     "tensorflow>=2.3",
+     "timeout-decorator",
+-    "tokenizers>=0.10.1,<0.11",
++    "tokenizers==0.13.3",
+     "torch>=1.0",
+     "torchaudio",
+     "tqdm>=4.27",
+--- a/huggingface_transformer_src/src/transformers/dependency_versions_table.py
++++ b/huggingface_transformer_src/src/transformers/dependency_versions_table.py
+@@ -56,7 +56,7 @@
+     "tensorflow-cpu": "tensorflow-cpu>=2.3",
+     "tensorflow": "tensorflow>=2.3",
+     "timeout-decorator": "timeout-decorator",
+-    "tokenizers": "tokenizers>=0.10.1,<0.11",
++    "tokenizers": "tokenizers==0.13.3",
+     "torch": "torch>=1.0",
+     "torchaudio": "torchaudio",
+     "tqdm": "tqdm>=4.27",

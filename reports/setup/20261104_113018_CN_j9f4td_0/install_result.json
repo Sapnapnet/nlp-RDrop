@@ -1,0 +1,146 @@
+{
+  "step": 2,
+  "overall_status": "PASS",
+  "output_directory": "/root/autodl-tmp/rdrop-mrpc-project/reports/setup/20261104_113018_CN_j9f4td_0",
+  "started_at_utc": "2026-11-04T03:30:18.045892+00:00",
+  "commands": [
+    {
+      "argv": [
+        "/root/miniconda3/bin/python",
+        "-c",
+        "import json,sys,torch,numpy\nprint(json.dumps({'python':sys.version.split()[0], 'torch':str(torch.__version__),\n'torch_cuda':torch.version.cuda, 'torch_file':torch.__file__, 'numpy':numpy.__version__,\n'cuda_available':torch.cuda.is_available()}))"
+      ],
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/root/miniconda3/bin/python",
+        "-m",
+        "venv",
+        "--system-site-packages",
+        "/root/autodl-tmp/rdrop-mrpc-project/.venv"
+      ],
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/root/autodl-tmp/rdrop-mrpc-project/.venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-index",
+        "--find-links",
+        "/root/autodl-tmp/rdrop-mrpc-project/wheelhouse",
+        "--no-deps",
+        "--require-hashes",
+        "--disable-pip-version-check",
+        "-r",
+        "/root/autodl-tmp/rdrop-mrpc-project/requirements-bootstrap.lock"
+      ],
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/root/autodl-tmp/rdrop-mrpc-project/.venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-index",
+        "--find-links",
+        "/root/autodl-tmp/rdrop-mrpc-project/wheelhouse",
+        "--no-deps",
+        "--require-hashes",
+        "--disable-pip-version-check",
+        "-r",
+        "/root/autodl-tmp/rdrop-mrpc-project/requirements-step2.lock"
+      ],
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/root/autodl-tmp/rdrop-mrpc-project/.venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-index",
+        "--no-deps",
+        "--no-build-isolation",
+        "--disable-pip-version-check",
+        "--editable",
+        "/root/autodl-tmp/rdrop-mrpc-project/vendor/R-Drop/huggingface_transformer_src"
+      ],
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/root/autodl-tmp/rdrop-mrpc-project/.venv/bin/python",
+        "-c",
+        "import json,sys,torch,numpy\nprint(json.dumps({'python':sys.version.split()[0], 'torch':str(torch.__version__),\n'torch_cuda':torch.version.cuda, 'torch_file':torch.__file__, 'numpy':numpy.__version__,\n'cuda_available':torch.cuda.is_available()}))"
+      ],
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/root/autodl-tmp/rdrop-mrpc-project/.venv/bin/python",
+        "/root/autodl-tmp/rdrop-mrpc-project/scripts/check_dependencies.py",
+        "--output-dir",
+        "/root/autodl-tmp/rdrop-mrpc-project/reports/setup/20261104_113018_CN_j9f4td_0"
+      ],
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/root/miniconda3/bin/python",
+        "-c",
+        "import json,sys,torch,numpy\nprint(json.dumps({'python':sys.version.split()[0], 'torch':str(torch.__version__),\n'torch_cuda':torch.version.cuda, 'torch_file':torch.__file__, 'numpy':numpy.__version__,\n'cuda_available':torch.cuda.is_available()}))"
+      ],
+      "returncode": 0
+    }
+  ],
+  "scope": "Author-source and dependency setup; no MRPC data or pretrained model downloaded.",
+  "bundle_verification": {
+    "package_count": 44,
+    "wheel_bytes": 142244324,
+    "source_commit": "9dcc8302eb9b0f112c38230864bbee807bbe1aa7",
+    "source_archive_sha256": "4aacdc737190fccc86f3fcf4fffed55de22de450dd88ea5eee54a421576fc72e",
+    "wheel_hashes_verified": true,
+    "lockfile_hashes_verified": true
+  },
+  "base_before": {
+    "python": "3.10.8",
+    "torch": "2.1.2+cu118",
+    "torch_cuda": "11.8",
+    "torch_file": "/root/miniconda3/lib/python3.10/site-packages/torch/__init__.py",
+    "numpy": "1.26.4",
+    "cuda_available": true
+  },
+  "source_preparation": {
+    "commit": "9dcc8302eb9b0f112c38230864bbee807bbe1aa7",
+    "archive_sha256": "4aacdc737190fccc86f3fcf4fffed55de22de450dd88ea5eee54a421576fc72e",
+    "verified_upstream_file_count": 1213,
+    "working_directory": "/root/autodl-tmp/rdrop-mrpc-project/vendor/R-Drop",
+    "compatibility_patched_files": [
+      "huggingface_transformer_src/setup.py",
+      "huggingface_transformer_src/src/transformers/dependency_versions_table.py"
+    ],
+    "algorithm_files_modified": false
+  },
+  "project_python": "/root/autodl-tmp/rdrop-mrpc-project/.venv/bin/python",
+  "project_environment": {
+    "python": "3.10.8",
+    "torch": "2.1.2+cu118",
+    "torch_cuda": "11.8",
+    "torch_file": "/root/miniconda3/lib/python3.10/site-packages/torch/__init__.py",
+    "numpy": "1.26.4",
+    "cuda_available": true
+  },
+  "base_after": {
+    "python": "3.10.8",
+    "torch": "2.1.2+cu118",
+    "torch_cuda": "11.8",
+    "torch_file": "/root/miniconda3/lib/python3.10/site-packages/torch/__init__.py",
+    "numpy": "1.26.4",
+    "cuda_available": true
+  },
+  "finished_at_utc": "2026-11-04T03:30:43.810231+00:00"
+}

@@ -1,0 +1,37 @@
+{
+  "path": "/root/autodl-tmp/rdrop-mrpc-project/reports/rdrop_formal/batch_20261104T082306144395Z/rdrop_alpha1/seed13/checkpoint-final",
+  "state_sha256": "4297af169c82bfb4eb37e418f13446ae1c1f7a93a77cd7ebdfa7365e2f96de82",
+  "optimizer_saved": false,
+  "files": [
+    {
+      "name": "config.json",
+      "size": 828,
+      "sha256": "070ec1527bb0403e527e3b7c3c040e0ad86bc6724a229b4af4e343bc474718cc"
+    },
+    {
+      "name": "pytorch_model.bin",
+      "size": 433333618,
+      "sha256": "447bd9f400e73ee3083645d71e508a40444fb3925d4c27e58d8bad39ee945314"
+    },
+    {
+      "name": "special_tokens_map.json",
+      "size": 112,
+      "sha256": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3"
+    },
+    {
+      "name": "tokenizer.json",
+      "size": 669188,
+      "sha256": "ce5329e13fa2a461b8ad21453d4ed1be6de6c3e0b371aafa2b9572217b659ea1"
+    },
+    {
+      "name": "tokenizer_config.json",
+      "size": 327,
+      "sha256": "bbadbf22bac5297e82ca03a2cefc91af8c392c962cfa0beab75b75c4b1c66a91"
+    },
+    {
+      "name": "vocab.txt",
+      "size": 213450,
+      "sha256": "eeaa9875b23b04b4c54ef759d03db9d1ba1554838f8fb26c5d96fa551df93d02"
+    }
+  ]
+}

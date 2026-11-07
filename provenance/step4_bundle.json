@@ -1,0 +1,51 @@
+{
+  "step": 4,
+  "scope": "Baseline smoke implementation and shared training configuration",
+  "files": [
+    {
+      "path": "src/__init__.py",
+      "sha256": "81d2d454cd91ce2ec8d1b1ee816e43b09bbfd275c56fa9286a87ec42db46afb1",
+      "size": 73
+    },
+    {
+      "path": "src/baseline_model.py",
+      "sha256": "e036e6bfa7c7cfd880689fb1e25ef7b0eb654f16c586efad6edcc750a924e87a",
+      "size": 1173
+    },
+    {
+      "path": "src/training_core.py",
+      "sha256": "4b29c3914d4de873fe88a9ac0b413b8a075e88b295d81cc87d366e6b1cb433d2",
+      "size": 9331
+    },
+    {
+      "path": "scripts/asset_utils.py",
+      "sha256": "a1d615cbaa22601b5f5a83221013352898157d4d6ae0ec4d5ba0d870f1962a5d",
+      "size": 5119
+    },
+    {
+      "path": "scripts/baseline_smoke_runtime.py",
+      "sha256": "86d8520d4a3601f0bc685a02f4bbc2b3c89c1bf9f8b2740883ff7b1f11cd8928",
+      "size": 15252
+    },
+    {
+      "path": "scripts/check_step4.py",
+      "sha256": "02bbde2ddcf3bca02485802547fc312350cce4241479f00e788dd69dfc803794",
+      "size": 5041
+    },
+    {
+      "path": "configs/training_protocol.json",
+      "sha256": "a6632aba3bc7abdbb3d588d1de2a637ca37d1ecd13560839006b73d1a74d3d7a",
+      "size": 2835
+    },
+    {
+      "path": "configs/baseline_smoke.json",
+      "sha256": "dd88e05b61073508b15e0734090781e8b4a7b3ece5fd9ef1c68ded52196bb41f",
+      "size": 574
+    },
+    {
+      "path": "tests/test_step4_training.py",
+      "sha256": "3e10a6aba4af9557da0b7cdfc88703c8a04c244133daea11cc24f0af08d3802e",
+      "size": 9296
+    }
+  ]
+}

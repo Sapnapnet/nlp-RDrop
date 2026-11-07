@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "condition": "rdrop_alpha0",
+  "seed": 13,
+  "alpha": 0.0,
+  "purpose": "engineering_preflight_not_formal_experiment",
+  "initial_state_sha256": "55e6adb49031efc8018f7d2733471c77c5f2df5df61aed15b20223b51f7499bd",
+  "final_state_sha256": "07dfb40e6c28649ee8514a3465d05731c13bc26598f84fd5fd5374fd8122fc8b",
+  "optimizer_updates": 2,
+  "microbatches": 4,
+  "examples_seen": 32,
+  "encoder_forward_calls": 8,
+  "encoder_example_passes": 64,
+  "dev_accuracy": 0.3161764705882353,
+  "dev_f1": 0.0071174377224199285
+}

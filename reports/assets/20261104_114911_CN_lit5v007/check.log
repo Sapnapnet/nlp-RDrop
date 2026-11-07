@@ -1,0 +1,18 @@
+Step 3: verify and load MRPC + pretrained BERT offline
+Report directory: /root/autodl-tmp/rdrop-mrpc-project/reports/assets/20261104_114911_CN_lit5v007
+[PASS] Asset SHA256, unchanged MRPC splits, labels and sample identities.
+Running full-data tokenization and pretrained GPU checks; output is in check.log.
+[PASS] runtime: Validated project environment and unchanged author BERT source.
+[PASS] real_mrpc: All 3668 train and 408 validation rows match source Parquet exactly; IDs and labels verified.
+[PASS] full_data_tokenization: Fast/slow tokenizers agree on every MRPC pair; fixed length 128 and truncation counts recorded.
+[PASS] real_batch: Dataset/DataLoader produced a fixed batch of 8 real pairs, shape [8,128].
+Loading the verified pretrained encoder from the local weight file...
+Some weights of the model checkpoint at /root/autodl-tmp/rdrop-mrpc-project/models/bert-base-cased were not used when initializing BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at /root/autodl-tmp/rdrop-mrpc-project/models/bert-base-cased and are newly initialized: ['classifier.weight', 'classifier.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[PASS] pretrained_encoder: All encoder weights loaded; only the binary classifier is newly initialized, as expected.
+[PASS] fp32_real_forward: One pretrained encoder forward, finite logits/loss; no parameter updates.
+[PASS] fp16_amp_real_forward: One pretrained encoder forward, finite logits/loss; no parameter updates.
+Overall: PASS

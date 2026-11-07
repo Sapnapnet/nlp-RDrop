@@ -1,0 +1,37 @@
+{
+  "splits": {
+    "train": {
+      "num_rows": 3668,
+      "label_counts": {
+        "0": 1194,
+        "1": 2474
+      },
+      "unique_native_ids": 3668,
+      "native_id_min": 0,
+      "native_id_max": 4075,
+      "ordered_rows_sha256": "5f967d87bc5b5f33ff4c092f7d78066de806c7f0857bd3e0129f0f255591a8ab",
+      "duplicate_ordered_pairs": 0,
+      "duplicate_unordered_pairs": 0
+    },
+    "validation": {
+      "num_rows": 408,
+      "label_counts": {
+        "0": 129,
+        "1": 279
+      },
+      "unique_native_ids": 408,
+      "native_id_min": 9,
+      "native_id_max": 4053,
+      "ordered_rows_sha256": "497e7e4e3227190705b5d22ea8cda7827d92f7e1449d947c41cc1ba671e9d9d4",
+      "duplicate_ordered_pairs": 0,
+      "duplicate_unordered_pairs": 0
+    }
+  },
+  "cross_split": {
+    "native_id_overlap": 0,
+    "exact_ordered_pair_overlap": 0,
+    "exact_unordered_pair_overlap": 0,
+    "exact_sentence_overlap": 43,
+    "interpretation": "Exact strings only; sentence overlap alone does not establish leakage. Original split is preserved."
+  }
+}

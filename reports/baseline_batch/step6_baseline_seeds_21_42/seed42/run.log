@@ -1,0 +1,31 @@
+Some weights of the model checkpoint at /root/autodl-tmp/rdrop-mrpc-project/models/bert-base-cased were not used when initializing BaselineBertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']
+- This IS expected if you are initializing BaselineBertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BaselineBertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BaselineBertForSequenceClassification were not initialized from the model checkpoint at /root/autodl-tmp/rdrop-mrpc-project/models/bert-base-cased and are newly initialized: ['classifier.weight', 'classifier.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Validated complete MRPC encodings and pretrained source. Starting seed 42.
+step 1/2296 loss=0.721390 lr=0 elapsed=0.4s
+step 100/2296 loss=0.567078 lr=7.23e-06 elapsed=14.7s
+step 200/2296 loss=0.692215 lr=9.72e-06 elapsed=29.1s
+step 300/2296 loss=0.321465 lr=9.26e-06 elapsed=43.4s
+step 400/2296 loss=0.267048 lr=8.8e-06 elapsed=57.9s
+step 500/2296 loss=0.193485 lr=8.34e-06 elapsed=72.3s
+step 600/2296 loss=0.132008 lr=7.88e-06 elapsed=86.9s
+step 700/2296 loss=0.202068 lr=7.42e-06 elapsed=101.2s
+step 800/2296 loss=0.138649 lr=6.96e-06 elapsed=115.8s
+step 900/2296 loss=0.034282 lr=6.51e-06 elapsed=130.5s
+step 1000/2296 loss=0.066491 lr=6.05e-06 elapsed=145.0s
+step 1100/2296 loss=0.010003 lr=5.59e-06 elapsed=159.3s
+step 1200/2296 loss=0.004941 lr=5.13e-06 elapsed=173.7s
+step 1300/2296 loss=0.003136 lr=4.67e-06 elapsed=188.3s
+step 1400/2296 loss=0.002974 lr=4.21e-06 elapsed=202.9s
+step 1500/2296 loss=0.037069 lr=3.75e-06 elapsed=217.5s
+step 1600/2296 loss=0.001952 lr=3.3e-06 elapsed=232.1s
+step 1700/2296 loss=0.012020 lr=2.84e-06 elapsed=246.7s
+step 1800/2296 loss=0.004128 lr=2.38e-06 elapsed=261.2s
+step 1900/2296 loss=0.001793 lr=1.92e-06 elapsed=275.6s
+step 2000/2296 loss=0.001744 lr=1.46e-06 elapsed=290.1s
+step 2100/2296 loss=0.001392 lr=1e-06 elapsed=304.6s
+step 2200/2296 loss=0.001308 lr=5.45e-07 elapsed=319.1s
+step 2296/2296 loss=0.001201 lr=1.05e-07 elapsed=333.1s
+Complete dev: Accuracy=83.0882%  F1=88.2453%

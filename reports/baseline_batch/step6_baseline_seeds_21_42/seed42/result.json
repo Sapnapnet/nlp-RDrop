@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "condition": "baseline",
+  "seed": 42,
+  "protocol_id": "mrpc_bert_cased_v1",
+  "protocol_sha256": "3d6a5fe3090614ad5061edcffe8558a7074f6b6b605509232d2d9742c4baaebd",
+  "code_manifest_sha256": "ce8f9fc427d6371d47500bd8151728b3ffb88551a9767ff19fcea49a879cb04b",
+  "input_manifest_sha256": "f488231f82092add462278044fbe2dc96ee2ec2fb2e8face4f77464752c6bbdd",
+  "dev_examples": 408,
+  "accuracy": 0.8308823529411765,
+  "f1": 0.8824531516183987,
+  "optimizer_updates": 2296,
+  "train_loop_wall_seconds": 333.095121614635,
+  "mean_wall_seconds_per_update": 0.1450762724802417,
+  "peak_allocated_bytes": 2607745024,
+  "peak_reserved_bytes": 2940207104,
+  "encoder_forward_calls": 4583,
+  "encoder_example_passes": 36628,
+  "examples_seen": 36628,
+  "checkpoint_selection": "last_update",
+  "statistical_scope": "One seed only; no multi-seed standard deviation yet."
+}

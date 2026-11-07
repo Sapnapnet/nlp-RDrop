@@ -1,0 +1,11 @@
+{
+  "commit": "9dcc8302eb9b0f112c38230864bbee807bbe1aa7",
+  "archive_sha256": "4aacdc737190fccc86f3fcf4fffed55de22de450dd88ea5eee54a421576fc72e",
+  "verified_upstream_file_count": 1213,
+  "working_directory": "/root/autodl-tmp/rdrop-mrpc-project/vendor/R-Drop",
+  "compatibility_patched_files": [
+    "huggingface_transformer_src/setup.py",
+    "huggingface_transformer_src/src/transformers/dependency_versions_table.py"
+  ],
+  "algorithm_files_modified": false
+}

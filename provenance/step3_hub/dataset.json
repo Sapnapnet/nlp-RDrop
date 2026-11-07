@@ -1,0 +1,1346 @@
+{
+  "_id": "621ffdd236468d709f181e3f",
+  "id": "nyu-mll/glue",
+  "author": "nyu-mll",
+  "sha": "bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c",
+  "lastModified": "2024-01-30T07:41:18.000Z",
+  "private": false,
+  "gated": false,
+  "disabled": false,
+  "tags": [
+    "task_categories:text-classification",
+    "task_ids:acceptability-classification",
+    "task_ids:natural-language-inference",
+    "task_ids:semantic-similarity-scoring",
+    "task_ids:sentiment-classification",
+    "task_ids:text-scoring",
+    "annotations_creators:other",
+    "language_creators:other",
+    "multilinguality:monolingual",
+    "source_datasets:original",
+    "language:en",
+    "license:other",
+    "size_categories:1M<n<10M",
+    "format:parquet",
+    "modality:tabular",
+    "modality:text",
+    "library:datasets",
+    "library:pandas",
+    "library:mlcroissant",
+    "library:polars",
+    "arxiv:1804.07461",
+    "region:us",
+    "qa-nli",
+    "coreference-nli",
+    "paraphrase-identification"
+  ],
+  "description": "\n\t\n\t\t\n\t\n\t\n\t\tDataset Card for GLUE\n\t\n\n\n\t\n\t\t\n\t\n\t\n\t\tDataset Summary\n\t\n\nGLUE, the General Language Understanding Evaluation benchmark (https://gluebenchmark.com/) is a collection of resources for training, evaluating, and analyzing natural language understanding systems.\n\n\t\n\t\t\n\t\n\t\n\t\tSupported Tasks and Leaderboards\n\t\n\nThe leaderboard for the GLUE benchmark can be found at this address. It comprises the following tasks:\n\n\t\n\t\t\n\t\n\t\n\t\tax\n\t\n\nA manually-curated evaluation dataset for fine-grained… See the full description on the dataset page: https://huggingface.co/datasets/nyu-mll/glue.",
+  "paperswithcode_id": "glue",
+  "downloads": 660896,
+  "likes": 783,
+  "cardData": {
+    "annotations_creators": [
+      "other"
+    ],
+    "language_creators": [
+      "other"
+    ],
+    "language": [
+      "en"
+    ],
+    "license": [
+      "other"
+    ],
+    "multilinguality": [
+      "monolingual"
+    ],
+    "size_categories": [
+      "10K<n<100K"
+    ],
+    "source_datasets": [
+      "original"
+    ],
+    "task_categories": [
+      "text-classification"
+    ],
+    "task_ids": [
+      "acceptability-classification",
+      "natural-language-inference",
+      "semantic-similarity-scoring",
+      "sentiment-classification",
+      "text-scoring"
+    ],
+    "paperswithcode_id": "glue",
+    "pretty_name": "GLUE (General Language Understanding Evaluation benchmark)",
+    "config_names": [
+      "ax",
+      "cola",
+      "mnli",
+      "mnli_matched",
+      "mnli_mismatched",
+      "mrpc",
+      "qnli",
+      "qqp",
+      "rte",
+      "sst2",
+      "stsb",
+      "wnli"
+    ],
+    "tags": [
+      "qa-nli",
+      "coreference-nli",
+      "paraphrase-identification"
+    ],
+    "dataset_info": [
+      {
+        "config_name": "ax",
+        "features": [
+          {
+            "name": "premise",
+            "dtype": "string"
+          },
+          {
+            "name": "hypothesis",
+            "dtype": "string"
+          },
+          {
+            "name": "label",
+            "dtype": {
+              "class_label": {
+                "names": {
+                  "0": "entailment",
+                  "1": "neutral",
+                  "2": "contradiction"
+                }
+              }
+            }
+          },
+          {
+            "name": "idx",
+            "dtype": "int32"
+          }
+        ],
+        "splits": [
+          {
+            "name": "test",
+            "num_bytes": 237694,
+            "num_examples": 1104
+          }
+        ],
+        "download_size": 80767,
+        "dataset_size": 237694
+      },
+      {
+        "config_name": "cola",
+        "features": [
+          {
+            "name": "sentence",
+            "dtype": "string"
+          },
+          {
+            "name": "label",
+            "dtype": {
+              "class_label": {
+                "names": {
+                  "0": "unacceptable",
+                  "1": "acceptable"
+                }
+              }
+            }
+          },
+          {
+            "name": "idx",
+            "dtype": "int32"
+          }
+        ],
+        "splits": [
+          {
+            "name": "train",
+            "num_bytes": 484869,
+            "num_examples": 8551
+          },
+          {
+            "name": "validation",
+            "num_bytes": 60322,
+            "num_examples": 1043
+          },
+          {
+            "name": "test",
+            "num_bytes": 60513,
+            "num_examples": 1063
+          }
+        ],
+        "download_size": 326394,
+        "dataset_size": 605704
+      },
+      {
+        "config_name": "mnli",
+        "features": [
+          {
+            "name": "premise",
+            "dtype": "string"
+          },
+          {
+            "name": "hypothesis",
+            "dtype": "string"
+          },
+          {
+            "name": "label",
+            "dtype": {
+              "class_label": {
+                "names": {
+                  "0": "entailment",
+                  "1": "neutral",
+                  "2": "contradiction"
+                }
+              }
+            }
+          },
+          {
+            "name": "idx",
+            "dtype": "int32"
+          }
+        ],
+        "splits": [
+          {
+            "name": "train",
+            "num_bytes": 74619646,
+            "num_examples": 392702
+          },
+          {
+            "name": "validation_matched",
+            "num_bytes": 1833783,
+            "num_examples": 9815
+          },
+          {
+            "name": "validation_mismatched",
+            "num_bytes": 1949231,
+            "num_examples": 9832
+          },
+          {
+            "name": "test_matched",
+            "num_bytes": 1848654,
+            "num_examples": 9796
+          },
+          {
+            "name": "test_mismatched",
+            "num_bytes": 1950703,
+            "num_examples": 9847
+          }
+        ],
+        "download_size": 57168425,
+        "dataset_size": 82202017
+      },
+      {
+        "config_name": "mnli_matched",
+        "features": [
+          {
+            "name": "premise",
+            "dtype": "string"
+          },
+          {
+            "name": "hypothesis",
+            "dtype": "string"
+          },
+          {
+            "name": "label",
+            "dtype": {
+              "class_label": {
+                "names": {
+                  "0": "entailment",
+                  "1": "neutral",
+                  "2": "contradiction"
+                }
+              }
+            }
+          },
+          {
+            "name": "idx",
+            "dtype": "int32"
+          }
+        ],
+        "splits": [
+          {
+            "name": "validation",
+            "num_bytes": 1833783,
+            "num_examples": 9815
+          },
+          {
+            "name": "test",
+            "num_bytes": 1848654,
+            "num_examples": 9796
+          }
+        ],
+        "download_size": 2435055,
+        "dataset_size": 3682437
+      },
+      {
+        "config_name": "mnli_mismatched",
+        "features": [
+          {
+            "name": "premise",
+            "dtype": "string"
+          },
+          {
+            "name": "hypothesis",
+            "dtype": "string"
+          },
+          {
+            "name": "label",
+            "dtype": {
+              "class_label": {
+                "names": {
+                  "0": "entailment",
+                  "1": "neutral",
+                  "2": "contradiction"
+                }
+              }
+            }
+          },
+          {
+            "name": "idx",
+            "dtype": "int32"
+          }
+        ],
+        "splits": [
+          {
+            "name": "validation",
+            "num_bytes": 1949231,
+            "num_examples": 9832
+          },
+          {
+            "name": "test",
+            "num_bytes": 1950703,
+            "num_examples": 9847
+          }
+        ],
+        "download_size": 2509009,
+        "dataset_size": 3899934
+      },
+      {
+        "config_name": "mrpc",
+        "features": [
+          {
+            "name": "sentence1",
+            "dtype": "string"
+          },
+          {
+            "name": "sentence2",
+            "dtype": "string"
+          },
+          {
+            "name": "label",
+            "dtype": {
+              "class_label": {
+                "names": {
+                  "0": "not_equivalent",
+                  "1": "equivalent"
+                }
+              }
+            }
+          },
+          {
+            "name": "idx",
+            "dtype": "int32"
+          }
+        ],
+        "splits": [
+          {
+            "name": "train",
+            "num_bytes": 943843,
+            "num_examples": 3668
+          },
+          {
+            "name": "validation",
+            "num_bytes": 105879,
+            "num_examples": 408
+          },
+          {
+            "name": "test",
+            "num_bytes": 442410,
+            "num_examples": 1725
+          }
+        ],
+        "download_size": 1033400,
+        "dataset_size": 1492132
+      },
+      {
+        "config_name": "qnli",
+        "features": [
+          {
+            "name": "question",
+            "dtype": "string"
+          },
+          {
+            "name": "sentence",
+            "dtype": "string"
+          },
+          {
+            "name": "label",
+            "dtype": {
+              "class_label": {
+                "names": {
+                  "0": "entailment",
+                  "1": "not_entailment"
+                }
+              }
+            }
+          },
+          {
+            "name": "idx",
+            "dtype": "int32"
+          }
+        ],
+        "splits": [
+          {
+            "name": "train",
+            "num_bytes": 25612443,
+            "num_examples": 104743
+          },
+          {
+            "name": "validation",
+            "num_bytes": 1368304,
+            "num_examples": 5463
+          },
+          {
+            "name": "test",
+            "num_bytes": 1373093,
+            "num_examples": 5463
+          }
+        ],
+        "download_size": 19278324,
+        "dataset_size": 28353840
+      },
+      {
+        "config_name": "qqp",
+        "features": [
+          {
+            "name": "question1",
+            "dtype": "string"
+          },
+          {
+            "name": "question2",
+            "dtype": "string"
+          },
+          {
+            "name": "label",
+            "dtype": {
+              "class_label": {
+                "names": {
+                  "0": "not_duplicate",
+                  "1": "duplicate"
+                }
+              }
+            }
+          },
+          {
+            "name": "idx",
+            "dtype": "int32"
+          }
+        ],
+        "splits": [
+          {
+            "name": "train",
+            "num_bytes": 50900820,
+            "num_examples": 363846
+          },
+          {
+            "name": "validation",
+            "num_bytes": 5653754,
+            "num_examples": 40430
+          },
+          {
+            "name": "test",
+            "num_bytes": 55171111,
+            "num_examples": 390965
+          }
+        ],
+        "download_size": 73982265,
+        "dataset_size": 111725685
+      },
+      {
+        "config_name": "rte",
+        "features": [
+          {
+            "name": "sentence1",
+            "dtype": "string"
+          },
+          {
+            "name": "sentence2",
+            "dtype": "string"
+          },
+          {
+            "name": "label",
+            "dtype": {
+              "class_label": {
+                "names": {
+                  "0": "entailment",
+                  "1": "not_entailment"
+                }
+              }
+            }
+          },
+          {
+            "name": "idx",
+            "dtype": "int32"
+          }
+        ],
+        "splits": [
+          {
+            "name": "train",
+            "num_bytes": 847320,
+            "num_examples": 2490
+          },
+          {
+            "name": "validation",
+            "num_bytes": 90728,
+            "num_examples": 277
+          },
+          {
+            "name": "test",
+            "num_bytes": 974053,
+            "num_examples": 3000
+          }
+        ],
+        "download_size": 1274409,
+        "dataset_size": 1912101
+      },
+      {
+        "config_name": "sst2",
+        "features": [
+          {
+            "name": "sentence",
+            "dtype": "string"
+          },
+          {
+            "name": "label",
+            "dtype": {
+              "class_label": {
+                "names": {
+                  "0": "negative",
+                  "1": "positive"
+                }
+              }
+            }
+          },
+          {
+            "name": "idx",
+            "dtype": "int32"
+          }
+        ],
+        "splits": [
+          {
+            "name": "train",
+            "num_bytes": 4681603,
+            "num_examples": 67349
+          },
+          {
+            "name": "validation",
+            "num_bytes": 106252,
+            "num_examples": 872
+          },
+          {
+            "name": "test",
+            "num_bytes": 216640,
+            "num_examples": 1821
+          }
+        ],
+        "download_size": 3331080,
+        "dataset_size": 5004495
+      },
+      {
+        "config_name": "stsb",
+        "features": [
+          {
+            "name": "sentence1",
+            "dtype": "string"
+          },
+          {
+            "name": "sentence2",
+            "dtype": "string"
+          },
+          {
+            "name": "label",
+            "dtype": "float32"
+          },
+          {
+            "name": "idx",
+            "dtype": "int32"
+          }
+        ],
+        "splits": [
+          {
+            "name": "train",
+            "num_bytes": 754791,
+            "num_examples": 5749
+          },
+          {
+            "name": "validation",
+            "num_bytes": 216064,
+            "num_examples": 1500
+          },
+          {
+            "name": "test",
+            "num_bytes": 169974,
+            "num_examples": 1379
+          }
+        ],
+        "download_size": 766983,
+        "dataset_size": 1140829
+      },
+      {
+        "config_name": "wnli",
+        "features": [
+          {
+            "name": "sentence1",
+            "dtype": "string"
+          },
+          {
+            "name": "sentence2",
+            "dtype": "string"
+          },
+          {
+            "name": "label",
+            "dtype": {
+              "class_label": {
+                "names": {
+                  "0": "not_entailment",
+                  "1": "entailment"
+                }
+              }
+            }
+          },
+          {
+            "name": "idx",
+            "dtype": "int32"
+          }
+        ],
+        "splits": [
+          {
+            "name": "train",
+            "num_bytes": 107109,
+            "num_examples": 635
+          },
+          {
+            "name": "validation",
+            "num_bytes": 12162,
+            "num_examples": 71
+          },
+          {
+            "name": "test",
+            "num_bytes": 37889,
+            "num_examples": 146
+          }
+        ],
+        "download_size": 63522,
+        "dataset_size": 157160
+      }
+    ],
+    "configs": [
+      {
+        "config_name": "ax",
+        "data_files": [
+          {
+            "split": "test",
+            "path": "ax/test-*"
+          }
+        ]
+      },
+      {
+        "config_name": "cola",
+        "data_files": [
+          {
+            "split": "train",
+            "path": "cola/train-*"
+          },
+          {
+            "split": "validation",
+            "path": "cola/validation-*"
+          },
+          {
+            "split": "test",
+            "path": "cola/test-*"
+          }
+        ]
+      },
+      {
+        "config_name": "mnli",
+        "data_files": [
+          {
+            "split": "train",
+            "path": "mnli/train-*"
+          },
+          {
+            "split": "validation_matched",
+            "path": "mnli/validation_matched-*"
+          },
+          {
+            "split": "validation_mismatched",
+            "path": "mnli/validation_mismatched-*"
+          },
+          {
+            "split": "test_matched",
+            "path": "mnli/test_matched-*"
+          },
+          {
+            "split": "test_mismatched",
+            "path": "mnli/test_mismatched-*"
+          }
+        ]
+      },
+      {
+        "config_name": "mnli_matched",
+        "data_files": [
+          {
+            "split": "validation",
+            "path": "mnli_matched/validation-*"
+          },
+          {
+            "split": "test",
+            "path": "mnli_matched/test-*"
+          }
+        ]
+      },
+      {
+        "config_name": "mnli_mismatched",
+        "data_files": [
+          {
+            "split": "validation",
+            "path": "mnli_mismatched/validation-*"
+          },
+          {
+            "split": "test",
+            "path": "mnli_mismatched/test-*"
+          }
+        ]
+      },
+      {
+        "config_name": "mrpc",
+        "data_files": [
+          {
+            "split": "train",
+            "path": "mrpc/train-*"
+          },
+          {
+            "split": "validation",
+            "path": "mrpc/validation-*"
+          },
+          {
+            "split": "test",
+            "path": "mrpc/test-*"
+          }
+        ]
+      },
+      {
+        "config_name": "qnli",
+        "data_files": [
+          {
+            "split": "train",
+            "path": "qnli/train-*"
+          },
+          {
+            "split": "validation",
+            "path": "qnli/validation-*"
+          },
+          {
+            "split": "test",
+            "path": "qnli/test-*"
+          }
+        ]
+      },
+      {
+        "config_name": "qqp",
+        "data_files": [
+          {
+            "split": "train",
+            "path": "qqp/train-*"
+          },
+          {
+            "split": "validation",
+            "path": "qqp/validation-*"
+          },
+          {
+            "split": "test",
+            "path": "qqp/test-*"
+          }
+        ]
+      },
+      {
+        "config_name": "rte",
+        "data_files": [
+          {
+            "split": "train",
+            "path": "rte/train-*"
+          },
+          {
+            "split": "validation",
+            "path": "rte/validation-*"
+          },
+          {
+            "split": "test",
+            "path": "rte/test-*"
+          }
+        ]
+      },
+      {
+        "config_name": "sst2",
+        "data_files": [
+          {
+            "split": "train",
+            "path": "sst2/train-*"
+          },
+          {
+            "split": "validation",
+            "path": "sst2/validation-*"
+          },
+          {
+            "split": "test",
+            "path": "sst2/test-*"
+          }
+        ]
+      },
+      {
+        "config_name": "stsb",
+        "data_files": [
+          {
+            "split": "train",
+            "path": "stsb/train-*"
+          },
+          {
+            "split": "validation",
+            "path": "stsb/validation-*"
+          },
+          {
+            "split": "test",
+            "path": "stsb/test-*"
+          }
+        ]
+      },
+      {
+        "config_name": "wnli",
+        "data_files": [
+          {
+            "split": "train",
+            "path": "wnli/train-*"
+          },
+          {
+            "split": "validation",
+            "path": "wnli/validation-*"
+          },
+          {
+            "split": "test",
+            "path": "wnli/test-*"
+          }
+        ]
+      }
+    ],
+    "train-eval-index": [
+      {
+        "config": "cola",
+        "task": "text-classification",
+        "task_id": "binary_classification",
+        "splits": {
+          "train_split": "train",
+          "eval_split": "validation"
+        },
+        "col_mapping": {
+          "sentence": "text",
+          "label": "target"
+        }
+      },
+      {
+        "config": "sst2",
+        "task": "text-classification",
+        "task_id": "binary_classification",
+        "splits": {
+          "train_split": "train",
+          "eval_split": "validation"
+        },
+        "col_mapping": {
+          "sentence": "text",
+          "label": "target"
+        }
+      },
+      {
+        "config": "mrpc",
+        "task": "text-classification",
+        "task_id": "natural_language_inference",
+        "splits": {
+          "train_split": "train",
+          "eval_split": "validation"
+        },
+        "col_mapping": {
+          "sentence1": "text1",
+          "sentence2": "text2",
+          "label": "target"
+        }
+      },
+      {
+        "config": "qqp",
+        "task": "text-classification",
+        "task_id": "natural_language_inference",
+        "splits": {
+          "train_split": "train",
+          "eval_split": "validation"
+        },
+        "col_mapping": {
+          "question1": "text1",
+          "question2": "text2",
+          "label": "target"
+        }
+      },
+      {
+        "config": "stsb",
+        "task": "text-classification",
+        "task_id": "natural_language_inference",
+        "splits": {
+          "train_split": "train",
+          "eval_split": "validation"
+        },
+        "col_mapping": {
+          "sentence1": "text1",
+          "sentence2": "text2",
+          "label": "target"
+        }
+      },
+      {
+        "config": "mnli",
+        "task": "text-classification",
+        "task_id": "natural_language_inference",
+        "splits": {
+          "train_split": "train",
+          "eval_split": "validation_matched"
+        },
+        "col_mapping": {
+          "premise": "text1",
+          "hypothesis": "text2",
+          "label": "target"
+        }
+      },
+      {
+        "config": "mnli_mismatched",
+        "task": "text-classification",
+        "task_id": "natural_language_inference",
+        "splits": {
+          "train_split": "train",
+          "eval_split": "validation"
+        },
+        "col_mapping": {
+          "premise": "text1",
+          "hypothesis": "text2",
+          "label": "target"
+        }
+      },
+      {
+        "config": "mnli_matched",
+        "task": "text-classification",
+        "task_id": "natural_language_inference",
+        "splits": {
+          "train_split": "train",
+          "eval_split": "validation"
+        },
+        "col_mapping": {
+          "premise": "text1",
+          "hypothesis": "text2",
+          "label": "target"
+        }
+      },
+      {
+        "config": "qnli",
+        "task": "text-classification",
+        "task_id": "natural_language_inference",
+        "splits": {
+          "train_split": "train",
+          "eval_split": "validation"
+        },
+        "col_mapping": {
+          "question": "text1",
+          "sentence": "text2",
+          "label": "target"
+        }
+      },
+      {
+        "config": "rte",
+        "task": "text-classification",
+        "task_id": "natural_language_inference",
+        "splits": {
+          "train_split": "train",
+          "eval_split": "validation"
+        },
+        "col_mapping": {
+          "sentence1": "text1",
+          "sentence2": "text2",
+          "label": "target"
+        }
+      },
+      {
+        "config": "wnli",
+        "task": "text-classification",
+        "task_id": "natural_language_inference",
+        "splits": {
+          "train_split": "train",
+          "eval_split": "validation"
+        },
+        "col_mapping": {
+          "sentence1": "text1",
+          "sentence2": "text2",
+          "label": "target"
+        }
+      }
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "957b2579c6ef20995a09efd9a17f8fd90606f5ed",
+      "size": 1174
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "274c0b2c4c5524fe09285a8b7d945fe98a1dfe7a",
+      "size": 35296
+    },
+    {
+      "rfilename": "ax/test-00000-of-00001.parquet",
+      "blobId": "9e08ffaaf712ff76753b01ed0e55f5e45132c933",
+      "size": 80767,
+      "lfs": {
+        "sha256": "a07b802fe2d4968a1f7ccce9406826dc77e0d1dc53fea9491664bd8ebba8571a",
+        "size": 80767,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "cola/test-00000-of-00001.parquet",
+      "blobId": "b43b1f9ffedc30937b976436fd91381381b45f5b",
+      "size": 37719,
+      "lfs": {
+        "sha256": "3c4d526b6f49f432621de43569f9ecf6af41f639baaf4a9d821b95d745def61d",
+        "size": 37719,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "cola/train-00000-of-00001.parquet",
+      "blobId": "14489f30a11737fe912d8f5a392e1193c8ccf1f8",
+      "size": 251124,
+      "lfs": {
+        "sha256": "2e7538afa2000e63f5343f16a758d75c452661a384208399d2035cd2fce45c33",
+        "size": 251124,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "cola/validation-00000-of-00001.parquet",
+      "blobId": "9a2187db434d15b9e5a938cc0284ab723e2c6d46",
+      "size": 37551,
+      "lfs": {
+        "sha256": "c14b7219a7d9f9fe3dd291fd000f6623ee413805eb108c9c49578ed50873e4ba",
+        "size": 37551,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "mnli/test_matched-00000-of-00001.parquet",
+      "blobId": "c84793d1cb7a2bc940bd2821db04b9027c7f95bb",
+      "size": 1220119,
+      "lfs": {
+        "sha256": "a330c4f2aeb0bc92f1b4b133fbbaf51bf9c7d0f5cac3d06f49ef63af47dbb822",
+        "size": 1220119,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "mnli/test_mismatched-00000-of-00001.parquet",
+      "blobId": "6a68b1317215fd2d7fb7c5a2158559a6eccc4cff",
+      "size": 1257857,
+      "lfs": {
+        "sha256": "e5078398d5c83d183578b1bdafe94e4491ed28ad1cf8d98ee8846afcec651f16",
+        "size": 1257857,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "mnli/train-00000-of-00001.parquet",
+      "blobId": "027c8297cb9ab82ba6f501136de8cc8d9e7fd7f5",
+      "size": 52224361,
+      "lfs": {
+        "sha256": "49a4a5508b89b8fed2c6e81d2c47d00f4759050a7048c6cc5d95d31122ced3c1",
+        "size": 52224361,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "mnli/validation_matched-00000-of-00001.parquet",
+      "blobId": "fdad3fd7e20f5e08007ebc75a09dad86d7f73023",
+      "size": 1214936,
+      "lfs": {
+        "sha256": "7f918c09d9c35446b8e8f06a5672f8ab704e2897fecbf52e2e154141f3d7c421",
+        "size": 1214936,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "mnli/validation_mismatched-00000-of-00001.parquet",
+      "blobId": "ebb40d0ef0c2f62108424f456d6cf71486da4340",
+      "size": 1251152,
+      "lfs": {
+        "sha256": "04aba92823a954be36fe1b69b61eed334c9eb1009daba0dd79f69d77b87c535c",
+        "size": 1251152,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "mnli_matched/test-00000-of-00001.parquet",
+      "blobId": "c84793d1cb7a2bc940bd2821db04b9027c7f95bb",
+      "size": 1220119,
+      "lfs": {
+        "sha256": "a330c4f2aeb0bc92f1b4b133fbbaf51bf9c7d0f5cac3d06f49ef63af47dbb822",
+        "size": 1220119,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "mnli_matched/validation-00000-of-00001.parquet",
+      "blobId": "fdad3fd7e20f5e08007ebc75a09dad86d7f73023",
+      "size": 1214936,
+      "lfs": {
+        "sha256": "7f918c09d9c35446b8e8f06a5672f8ab704e2897fecbf52e2e154141f3d7c421",
+        "size": 1214936,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "mnli_mismatched/test-00000-of-00001.parquet",
+      "blobId": "6a68b1317215fd2d7fb7c5a2158559a6eccc4cff",
+      "size": 1257857,
+      "lfs": {
+        "sha256": "e5078398d5c83d183578b1bdafe94e4491ed28ad1cf8d98ee8846afcec651f16",
+        "size": 1257857,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "mnli_mismatched/validation-00000-of-00001.parquet",
+      "blobId": "ebb40d0ef0c2f62108424f456d6cf71486da4340",
+      "size": 1251152,
+      "lfs": {
+        "sha256": "04aba92823a954be36fe1b69b61eed334c9eb1009daba0dd79f69d77b87c535c",
+        "size": 1251152,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "mrpc/test-00000-of-00001.parquet",
+      "blobId": "535b3f50ecc75e1311fb073d8637614dd63cbbd9",
+      "size": 308441,
+      "lfs": {
+        "sha256": "a623ed1cbdf445b11f8e249acbf649d7d3a5ee58c918554c40cbd8307e488693",
+        "size": 308441,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "mrpc/train-00000-of-00001.parquet",
+      "blobId": "d9536e81cb28e8f3a431cbb43d2a0ef0e31de7ca",
+      "size": 649281,
+      "lfs": {
+        "sha256": "61fd41301e0e244b0420c4350a170c8e7cf64740335fc875a4af2d79af0df0af",
+        "size": 649281,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "mrpc/validation-00000-of-00001.parquet",
+      "blobId": "755c6fe48229183cb5aa27e04ceb546e015945dd",
+      "size": 75678,
+      "lfs": {
+        "sha256": "33c007dbf5bfa8463d87a13e6226df8c0fcf2596c2cd39d0f3bb79754e00f50f",
+        "size": 75678,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "qnli/test-00000-of-00001.parquet",
+      "blobId": "1f69b5409b7a4947a37d986ed74134ccac6b5eb3",
+      "size": 877345,
+      "lfs": {
+        "sha256": "f39520cd07925c9784e4a7f1f7aed8f17f136039b8498f7ad07c7bf13d65ba83",
+        "size": 877345,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "qnli/train-00000-of-00001.parquet",
+      "blobId": "59e9e525c4038f3a8c51d414fe17530093c57417",
+      "size": 17528917,
+      "lfs": {
+        "sha256": "ebc7cb70a5bbde0b0336c3d51f31bb4df4673e908e8874b090b52169b1365c6c",
+        "size": 17528917,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "qnli/validation-00000-of-00001.parquet",
+      "blobId": "86f227f6b0f89419c3d558781e394c5773cce56f",
+      "size": 872062,
+      "lfs": {
+        "sha256": "e69311b81dc65589286091d9905a27617a90436dd215c7a59832fa8f4f336169",
+        "size": 872062,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "qqp/test-00000-of-00001.parquet",
+      "blobId": "15f49242dcc3aec29e9f44ef8976ef15e5957f4b",
+      "size": 36694152,
+      "lfs": {
+        "sha256": "95d5d1efcfa3ff7e090565e98085770b3497aad8dbcf12996412b23d2fb669e8",
+        "size": 36694152,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "qqp/train-00000-of-00001.parquet",
+      "blobId": "d8c3b92d9dad49c730e27e8ca80ad7781cee338d",
+      "size": 33558839,
+      "lfs": {
+        "sha256": "4d6f02e643f7c36e9a4f7d4971a5ee9bd74063a319452fe6c87850c739774cd7",
+        "size": 33558839,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "qqp/validation-00000-of-00001.parquet",
+      "blobId": "d5fe977f2e937bf4895b5ae533c18a4e5f292771",
+      "size": 3729274,
+      "lfs": {
+        "sha256": "efd86a539c412d74874ee451573d7bd142f56c47fe36de033b9f367d8bb0fa71",
+        "size": 3729274,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "rte/test-00000-of-00001.parquet",
+      "blobId": "c0458c329e8d9b9c2a5058b415bb0608970f48f6",
+      "size": 621413,
+      "lfs": {
+        "sha256": "3f44aadbfb8bbb7a64ba0674bd26ff77b66e88fdf7a6d64255a5ba6ae9057383",
+        "size": 621413,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "rte/train-00000-of-00001.parquet",
+      "blobId": "7fe059d0b9b817269f06732d779b0628b362bfe5",
+      "size": 583976,
+      "lfs": {
+        "sha256": "a6252ab17015d718f6de1effe0980f7b158df63e3d16207cd8bd396b608e5147",
+        "size": 583976,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "rte/validation-00000-of-00001.parquet",
+      "blobId": "db2d914fd10e564d97bdd059ec021835f9957a0a",
+      "size": 69020,
+      "lfs": {
+        "sha256": "fb2aa2e04f551133ba663617a15ae133dc22b0f6a969bc0629b5ea6003ee9cf8",
+        "size": 69020,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "sst2/test-00000-of-00001.parquet",
+      "blobId": "51daf03787ea35f7587014f44253e3317ba5e498",
+      "size": 147793,
+      "lfs": {
+        "sha256": "e9d23cf0067211d2baf018328b507f5153fb6704d75117295a8bda47c7adccb1",
+        "size": 147793,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "sst2/train-00000-of-00001.parquet",
+      "blobId": "ddfd0a771052e3a541257da167614a7c61ece3bc",
+      "size": 3110468,
+      "lfs": {
+        "sha256": "66a253e67968acfabcbe49dbe9da964b42ac1c851c40ab760e8c8942efdb3229",
+        "size": 3110468,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "sst2/validation-00000-of-00001.parquet",
+      "blobId": "51827d4966533e9be520ab31c563028dcd6e61b9",
+      "size": 72819,
+      "lfs": {
+        "sha256": "a1371f3b3a7b0bcefa8388799a9359dc3ce76c349cc0079507a7991364fd2a9b",
+        "size": 72819,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "stsb/test-00000-of-00001.parquet",
+      "blobId": "2470da9f2e614cb594da29f0eac7718a482f3716",
+      "size": 114296,
+      "lfs": {
+        "sha256": "04fa2561f1ff3c395cf8980e3eed5d133c194abf636d5e1870d765c861087bd9",
+        "size": 114296,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "stsb/train-00000-of-00001.parquet",
+      "blobId": "170f310ee329964319e0915a9e8016ea47eb470a",
+      "size": 502065,
+      "lfs": {
+        "sha256": "bbd93bbb988fd18437e02185fe3b2bd9a18350376c392e7820de9df1b247ed1f",
+        "size": 502065,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "stsb/validation-00000-of-00001.parquet",
+      "blobId": "01fd563aace476f30eac5e72136ee627415648be",
+      "size": 150622,
+      "lfs": {
+        "sha256": "152de7cf1fa34ee4df1c243bd209b02ade21a1d5c4fb3b7da5240f78e4000aa9",
+        "size": 150622,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "wnli/test-00000-of-00001.parquet",
+      "blobId": "4d48a68172fec380f819552b85fdf86bb7e6e1ba",
+      "size": 13620,
+      "lfs": {
+        "sha256": "766d3754c46a80f3275cb81a32ee6b7b49176fa8c1ef85ea92a4a3676510b902",
+        "size": 13620,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "wnli/train-00000-of-00001.parquet",
+      "blobId": "73a21b064146503ed47d2222c47ea61373173113",
+      "size": 38835,
+      "lfs": {
+        "sha256": "40f4c0c60db68addeda8e9cbe25e6344cd99d5bbb80125535994a9a3141ee0a9",
+        "size": 38835,
+        "pointerSize": 130
+      }
+    },
+    {
+      "rfilename": "wnli/validation-00000-of-00001.parquet",
+      "blobId": "083ec60b1591bddaa60cd792abe6c196c4822a4f",
+      "size": 11067,
+      "lfs": {
+        "sha256": "880037e45e03df868d5799ca21dc03f3a6378f0adf3c01c7bfc46b94fa61f1cb",
+        "size": 11067,
+        "pointerSize": 130
+      }
+    }
+  ],
+  "createdAt": "2022-03-02T23:29:22.000Z",
+  "usedStorage": 4006562287
+}

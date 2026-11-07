@@ -1,0 +1,88 @@
+{
+  "schema_version": 2,
+  "status": "Frozen for the user-authorized full-data baseline seed 13. B must match this protocol and validate R-Drop; if shared settings change, rerun affected conditions.",
+  "input_protocol_path": "configs/input_protocol.json",
+  "input_manifest_sha256": "f488231f82092add462278044fbe2dc96ee2ec2fb2e8face4f77464752c6bbdd",
+  "seeds": [
+    13,
+    21,
+    42
+  ],
+  "conditions": [
+    "baseline",
+    "rdrop_alpha0",
+    "rdrop_alpha0.5",
+    "rdrop_alpha1"
+  ],
+  "microbatch_size": 8,
+  "gradient_accumulation_steps": 2,
+  "effective_batch_size_nominal": 16,
+  "last_update_policy": "Keep all rows; flush at epoch end; average microbatch losses weighted by their actual row counts. Final update of a full epoch has 4 rows.",
+  "sampling": "Independent Python Random(seed + zero_based_epoch).shuffle; no global dropout RNG consumption; no replacement within each epoch.",
+  "train_precision": "fp16_amp",
+  "amp_init_scale": 128.0,
+  "amp_growth_interval": 2000,
+  "eval_precision": "fp32",
+  "eval_batch_size": 16,
+  "max_grad_norm": 1.0,
+  "optimizer": {
+    "class": "torch.optim.AdamW",
+    "learning_rate": 1e-05,
+    "betas": [
+      0.9,
+      0.98
+    ],
+    "eps": 1e-06,
+    "weight_decay": 0.01,
+    "no_decay": [
+      "bias",
+      "LayerNorm.weight"
+    ],
+    "foreach": false
+  },
+  "scheduler": {
+    "type": "polynomial",
+    "power": 1.0,
+    "end_learning_rate": 1e-07,
+    "step_order": "optimizer then scheduler; initial warmup LR is zero, following the author schedule convention"
+  },
+  "loss_contract": {
+    "baseline": "CE averaged over examples",
+    "rdrop": "0.5 * (CE1_mean + CE2_mean) + alpha * 0.5 * (KL12_batchmean + KL21_batchmean)",
+    "kl_reduction": "sum over classes then mean over examples, computed in float32 with gradients through both distributions",
+    "alpha_values": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "alpha_zero": "still two stochastic forwards and two CE terms; not numerical equality to baseline",
+    "source_note": "B must adapt the pinned author's bert_kl implementation and document the CE/KL normalization change; original source is unchanged in step 4."
+  },
+  "determinism": {
+    "deterministic_algorithms": true,
+    "cudnn_benchmark": false,
+    "tf32": false,
+    "cublas_workspace_config": ":4096:8"
+  },
+  "cost_reporting": {
+    "same_gpu_sequential": true,
+    "updates": "Actual optimizer.step calls; abort and retain failed-run artifacts on nonfinite gradients or AMP skips. Initial warmup LR=0 still counts as one call.",
+    "examples_seen": "training sample visits, including later epochs; distinct IDs recorded separately",
+    "encoder_example_passes": "counts duplicate R-Drop passes; not FLOPs",
+    "train_seconds": "CUDA-synchronized full training loop including update checks, sample selection/transfers, hook counting and logging; excludes preprocessing, evaluation, save and reload.",
+    "formal_note": "Use the identical training_core.py and logging interval for all conditions. Report instrumented wall-clock training cost, not pure kernel time. Keep first-step startup overhead.",
+    "secondary_timer": "Sum of synchronized update-body durations from train_update; excludes outer-loop logging and bookkeeping. Do not substitute it for total training wall time.",
+    "gpu_memory": "Reset CUDA peaks immediately before training; record allocated and reserved bytes before evaluation."
+  },
+  "protocol_id": "mrpc_bert_cased_v1",
+  "derived_from_step4_protocol_sha256": "a6632aba3bc7abdbb3d588d1de2a637ca37d1ecd13560839006b73d1a74d3d7a",
+  "formal": {
+    "max_updates": 2296,
+    "warmup_updates": 137,
+    "train_rows": 3668,
+    "dev_rows": 408,
+    "checkpoint_selection": "last update for every condition and seed; no best-dev checkpoint selection",
+    "evaluation": "full dev after final update"
+  },
+  "log_every_updates": 100
+}

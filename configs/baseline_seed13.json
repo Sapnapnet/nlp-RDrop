@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "purpose": "formal_baseline_single_seed",
+  "protocol_path": "configs/training_protocol_v1.json",
+  "condition": "baseline",
+  "seed": 13,
+  "max_updates": 2296,
+  "warmup_updates": 137,
+  "train_rows": 3668,
+  "dev_rows": 408,
+  "expected_microbatches": 4583,
+  "expected_training_example_visits": 36628,
+  "expected_encoder_forward_calls": 4583,
+  "expected_encoder_example_passes": 36628,
+  "checkpoint_selection": "last_update",
+  "resume_training": false,
+  "start_weights": "models/bert-base-cased",
+  "validated_seed13_initial_state_sha256": "55e6adb49031efc8018f7d2733471c77c5f2df5df61aed15b20223b51f7499bd"
+}

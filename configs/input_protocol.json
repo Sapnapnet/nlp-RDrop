@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "scope": "Shared model, data and tokenization only; training hyperparameters are defined in the next step.",
+  "model": {
+    "repository": "google-bert/bert-base-cased",
+    "revision": "cd5ef92a9fb2f889e972770a36d4ed042daf221e",
+    "local_path": "models/bert-base-cased",
+    "weight_file": "pytorch_model.bin",
+    "num_labels": 2,
+    "classifier_initialization": "Random, set the experiment seed before from_pretrained."
+  },
+  "dataset": {
+    "repository": "nyu-mll/glue",
+    "revision": "bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c",
+    "subset": "mrpc",
+    "train_path": "data/mrpc/train.jsonl",
+    "validation_path": "data/mrpc/validation.jsonl",
+    "train_rows": 3668,
+    "validation_rows": 408,
+    "validation_report_name": "dev",
+    "label_names": {
+      "0": "not_equivalent",
+      "1": "equivalent"
+    },
+    "preserve_original_order_and_text": true,
+    "test_used": false
+  },
+  "tokenization": {
+    "class": "BertTokenizerFast",
+    "do_lower_case": false,
+    "max_length": 128,
+    "padding": "max_length",
+    "truncation": "longest_first",
+    "add_special_tokens": true,
+    "return_token_type_ids": true,
+    "return_attention_mask": true
+  },
+  "evaluation": {
+    "split": "validation",
+    "prediction": "argmax over two logits",
+    "accuracy": "fraction correct",
+    "f1_average": "binary",
+    "f1_pos_label": 1,
+    "f1_zero_division": 0,
+    "selection_note": "If dev is used to select hyperparameters/checkpoints, reported scores remain dev scores, not independent test scores."
+  }
+}

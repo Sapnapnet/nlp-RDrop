@@ -1,0 +1,51 @@
+{
+  "seed": 13,
+  "run_path": "reports/baseline/seed13_20261104_122810_CN_kwnuwi7m",
+  "purpose": "Reuse the already accepted seed 13; never select among reruns by score.",
+  "gpu_identity": {
+    "index": "0",
+    "uuid": "GPU-deee7a72-8a0c-61a0-daaf-601d37c7b23e",
+    "name": "NVIDIA GeForce RTX 3090",
+    "driver": "580.105.08",
+    "memory_total": "24576 MiB",
+    "power_limit": "350.00 W"
+  },
+  "files": [
+    {
+      "name": "step5_result.json",
+      "sha256": "4095e3b88b7d4959a9d0fea0f55db00350642df73489ba8eac228c679e7f371a"
+    },
+    {
+      "name": "formal_report.json",
+      "sha256": "0824ff07c9cba1f4139b78155a72f61bd4c432ed1b9cccfc79c08ee79195a161"
+    },
+    {
+      "name": "result.json",
+      "sha256": "48b2e59f6b08e8fe76ffa3e18e49b143b3f9efa1d409262328c9c91fef9f0e9a"
+    },
+    {
+      "name": "run.log",
+      "sha256": "2173d6aab07afa78e1006041c46949264cb673ec6cdd2d993bf157f193c24790"
+    },
+    {
+      "name": "training_updates.jsonl",
+      "sha256": "1365fb283ecee76e093871279e4220535bf441faeb34facf354b6f68e287d6ee"
+    },
+    {
+      "name": "data_ids.json",
+      "sha256": "45f6b62fca12b695fc6c8d2a8c2ba1bc38104fc886acfb0b03c1763e8f518cf1"
+    },
+    {
+      "name": "predictions_dev.jsonl",
+      "sha256": "a059b2351f1bf69d092bd9cc469bafd9e774a21fdb33c1d5ab753975914434cd"
+    },
+    {
+      "name": "checkpoint_manifest.json",
+      "sha256": "68da2e979ed16c70a38d64d9a02d8dd10e0d7e9b577c25dd2b2004bc9ef7f718"
+    },
+    {
+      "name": "progress.json",
+      "sha256": "6e77d56f332beee30905df84d0b934de10d10c8188e1b769c1ee1d1c8584d7c5"
+    }
+  ]
+}
